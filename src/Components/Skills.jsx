@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaGitAlt, FaGithub, FaNodeJs } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaGitAlt, FaGithub, FaNodeJs, FaFigma, FaNetworkWired } from "react-icons/fa";
 import { SiTailwindcss, SiMongodb, SiExpress } from "react-icons/si";
 
 // Skills data
@@ -15,6 +15,8 @@ const skills = [
   { name: "MongoDB", rating: 1, icon: <SiMongodb size={30} color="#47A248" />, description: "MongoDB is a NoSQL database for storing data." },
   { name: "Express", rating: 2, icon: <SiExpress size={30} color="#000000" />, description: "Express is a web application framework for Node.js." },
   { name: "Node.js", rating: 3, icon: <FaNodeJs size={30} color="#8CC84B" />, description: "Node.js is a runtime for executing JavaScript on the server." },
+  { name: "Figma", rating: 4, icon: <FaFigma size={30} color="#F24E1E" />, description: "Figma is a collaborative design tool for interface design and prototyping." },
+  { name: "API Integration", rating: 3, icon: <FaNetworkWired size={30} color="#006F8E" />, description: "API integration involves connecting an application with external services to exchange data." }
 ];
 
 // Skill Card Component

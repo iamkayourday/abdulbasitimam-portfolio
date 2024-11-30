@@ -12,6 +12,13 @@ const Projects = () => {
       technologies: ["React", "Tailwind Css", "Hooks"]
     },
     {
+      title: "Hair by May",
+      description: "Redesign of the entire website of Hair by May.",
+      imageUrl: "hairbymay-desktop.jpg",
+      link: "https://hairbymay.vercel.app/",
+      technologies: ["React", "Tailwind Css", "Hooks"]
+    },
+    {
       title: "YumFind",
       description: "A web application for sharing and discovering recipes.",
       imageUrl: "yum-find-desktop.jpg",
@@ -24,13 +31,6 @@ const Projects = () => {
       imageUrl: "wix.jpg",
       link: "https://abdulbasitkayode1.wixsite.com/african-marketplace?page=3",
       technologies: ["Wix"]
-    },
-    {
-      title: "Hair by May",
-      description: "Redesign of the entire website of Hair by May.",
-      imageUrl: "hairbymay-desktop.jpg",
-      link: "https://hairbymay.vercel.app/",
-      technologies: ["React", "Tailwind Css", "Hooks"]
     }
     // Add more projects here
   ];

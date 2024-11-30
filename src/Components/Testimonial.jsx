@@ -24,7 +24,7 @@ const Testimonial = () => {
       text: "Tempore mollitia velit ipsum facere sequi porro commodi. Quia eos sapiente reiciendis quam voluptatum, eius expedita nemo nihil harum iure esse. Nemo.",
       rating: 4 // Rating out of 5
     }
-    
+
   ];
   // Function to render stars based on rating
   const renderStars = (rating) => {
@@ -50,7 +50,7 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 py-12">
+    <div id='testimonial' className="container mx-auto px-6 py-12">
       {/* Section Header */}
       <header className="text-center mb-8">
         <h2 className="text-3xl font-bold text-gray-800">What People Are Saying</h2>

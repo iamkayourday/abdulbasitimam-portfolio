@@ -87,6 +87,16 @@ const Header = () => {
             Projects
           </Link>
           <Link
+            to="testimonial"
+            className="text-2xl cursor-pointer lg:text-base hover:text-yellow-500 transition-colors"
+            smooth={true}
+            duration={500}
+            offset={-70}
+            onClick={handleMenuItemClick}
+          >
+            Testimonial
+          </Link>
+          <Link
             to="contact"
             className="text-2xl cursor-pointer lg:text-base bg-yellow-500 text-black px-6 py-2 rounded-lg hover:bg-yellow-600 transition-transform"
             smooth={true}
