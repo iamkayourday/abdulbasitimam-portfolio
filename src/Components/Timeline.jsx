@@ -1,37 +1,37 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-// Sample data for certificates with image URLs
+// Sample data for certificates with organization logos
 const certificates = [
   { 
-    title: "Frontend Developer Certification", 
-    date: "January 2024", 
-    description: "Completed a comprehensive course on frontend development including HTML, CSS, JavaScript, React, and more.", 
-    image: "https://via.placeholder.com/150" // Replace with your image URL
+    title: "Front-End Web Development", 
+    date: "October 2024", 
+    description: "Completed an in-depth course on front-end web development, mastering tools and frameworks like HTML, CSS, JavaScript,React and more!!",
+    logo: "Logo1.jpg" // Replace with the organization logo URL
   },
   { 
-    title: "React Developer Certification", 
-    date: "March 2024", 
-    description: "Achieved certification in React development, focusing on hooks, components, and state management.", 
-    image: "https://via.placeholder.com/150" // Replace with your image URL
+    title: "HTML, CSS and JavaScript for Web Developers", 
+    date: "May 2023", 
+    description: "Specialized in creating dynamic and interactive web pages using HTML, CSS, and JavaScript, focusing on web development fundamentals.",
+    logo: "logo2.png" 
   },
   { 
-    title: "JavaScript Advanced Certification", 
+    title: "HTML5 & CSS Complete course: Build website like a pro", 
     date: "June 2024", 
-    description: "Completed an advanced JavaScript course with a focus on ES6+ features, async programming, and performance optimization.", 
-    image: "https://via.placeholder.com/150" // Replace with your image URL
+    description: "Learned professional techniques for building modern, responsive websites using HTML5 and CSS3, with a focus on best practices and design principles.",
+    logo: "logo3.png" // Replace with your logo URL
   },
-  { 
-    title: "Node.js Developer Certification", 
-    date: "September 2024", 
-    description: "Received certification in Node.js, learning server-side JavaScript, Express, and RESTful API development.", 
-    image: "https://via.placeholder.com/150" // Replace with your image URL
-  },
-  { 
-    title: "Full Stack Development Certification", 
-    date: "November 2024", 
-    description: "Full-stack web development certification, including front-end and back-end technologies like MongoDB, Node.js, and React.", 
-    image: "https://via.placeholder.com/150" // Replace with your image URL
-  },
+  // { 
+  //   title: "Node.js Developer Certification", 
+  //   date: "September 2024", 
+  //   description: "Received certification in Node.js, learning server-side JavaScript, Express, and RESTful API development.", 
+  //   logo: "https://via.placeholder.com/150" 
+  // },
+  // { 
+  //   title: "Full Stack Development Certification", 
+  //   date: "November 2024", 
+  //   description: "Full-stack web development certification, including front-end and back-end technologies like MongoDB, Node.js, and React.", 
+  //   logo: "https://via.placeholder.com/150" 
+  // },
 ];
 
 const Timeline = () => {
@@ -98,8 +98,8 @@ const Timeline = () => {
               }}
             >
               <div className="p-6 bg-white shadow-lg rounded-lg">
-                {/* Certificate Image */}
-                <img src={cert.image} alt={cert.title} className="w-20 h-20 mb-4 rounded-lg" />
+                {/* Organization Logo */}
+                <img src={cert.logo} alt={`${cert.title} logo`} className="w-32 h-32 mb-4 rounded-lg object-cover" /> {/* Logo here */}
                 <h3 className="text-xl font-semibold">{cert.title}</h3>
                 <p className="text-sm text-gray-500">{cert.date}</p>
                 <p className="mt-2 text-gray-700">{cert.description}</p>

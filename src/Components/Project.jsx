@@ -5,18 +5,32 @@ const Projects = () => {
   // Array of project data
   const myprojects = [
     {
-      title: "Recipe Sharing App",
-      description: "A web application for sharing and discovering recipes.",
-      imageUrl: "https://via.placeholder.com/600x400",
-      link: "https://your-recipe-app.com",
-      technologies: ["React", "Node.js", "MongoDB"]
+      title: "Abdulbasit Portfolio",
+      description: "Creation 'from scratch' of my portfolio.",
+      imageUrl: "abdulbasitimam-desktop.jpg",
+      link: "https://abdulbasitimam.vercel.app/",
+      technologies: ["React", "Tailwind Css", "Hooks"]
     },
     {
-      title: "Task Manager",
-      description: "A web-based task manager app for organizing daily tasks.",
-      imageUrl: "https://via.placeholder.com/600x400",
-      link: "https://your-task-manager.com",
-      technologies: ["React", "Express", "MongoDB"]
+      title: "YumFind",
+      description: "A web application for sharing and discovering recipes.",
+      imageUrl: "yum-find-desktop.jpg",
+      link: "https://yum-find.vercel.app/",
+      technologies: ["React", "Tailwind Css", "Hooks"]
+    },
+    {
+      title: "African Market",
+      description: "An e-commerce platform designed to connect local vendors with customers, showcasing a variety of African products and services.",
+      imageUrl: "wix.jpg",
+      link: "https://abdulbasitkayode1.wixsite.com/african-marketplace?page=3",
+      technologies: ["Wix"]
+    },
+    {
+      title: "Hair by May",
+      description: "Redesign of the entire website of Hair by May.",
+      imageUrl: "hairbymay-desktop.jpg",
+      link: "https://hairbymay.vercel.app/",
+      technologies: ["React", "Tailwind Css", "Hooks"]
     }
     // Add more projects here
   ];

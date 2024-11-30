@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSpring, animated } from '@react-spring/web';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 const ProjectCard = ({ projectData }) => {
   const animationProps = useSpring({
@@ -35,22 +36,23 @@ const ProjectCard = ({ projectData }) => {
           {projectData.technologies.map((tech, index) => (
             <span
               key={index}
-              className="bg-blue-600 text-white text-sm font-semibold py-2 px-4 rounded-full"
+              className="bg-yellow-600 text-white text-sm font-semibold py-2 px-4 rounded-full"
             >
               {tech}
             </span>
           ))}
         </div>
 
-        {/* Project Link */}
-        <a
-          href={projectData.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-yellow-600 hover:text-yellow-800 font-semibold mt-4 block"
-        >
-          View Project
-        </a>
+        {/* Project Link Button */}
+        <div className="mt-4 flex justify-end">
+          <button
+            onClick={() => window.open(projectData.link, '_blank')}
+            className="flex items-center gap-2 bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded-full"
+          >
+            <FaExternalLinkAlt className="text-white" />
+            View Project
+          </button>
+        </div>
       </div>
     </animated.div>
   );
