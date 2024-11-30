@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* background-color: #111319; */
+  }
+
+/* Custom Torch Cursor */
+* {
+    cursor: url('https://path/to/torch-cursor.svg'), auto; 
+  }
+  
+  /* Hover effect for torch-like effect */
+  nav a:hover {
+    transform: scale(1.1); /* Slightly enlarges the element on hover */
+    color: #ffcc00; /* Change to a glowing yellow/torch color */
+  }
+
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
