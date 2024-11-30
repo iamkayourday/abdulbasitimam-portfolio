@@ -6,6 +6,7 @@ import Skills from "./Components/Skills";
 import Timeline from "./Components/Timeline";
 import Project from "./Components/Project";
 import Contact from "./Components/Contact";
+import AIChatWidget from "./Components/AiChatWidget";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Timeline />
         <Project />
         <Contact />
+        <AIChatWidget />
       </main>
       <Footer />
     </div>
