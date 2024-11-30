@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectCard from './ProjectCard';  // Importing the ProjectCard component
+import ProjectCard from './ProjectCard';  
 
 const Projects = () => {
   // Array of project data
