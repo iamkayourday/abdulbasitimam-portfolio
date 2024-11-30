@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-scroll'; // Import Link from react-scroll
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,19 +8,24 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleMenuItemClick = () => {
+    setIsOpen(false); // Close menu after clicking an item
+  };
+
   return (
-    <header className="fixed top-0 left-0 w-full backdrop-blur-md bg-white/30 border-b border-white/10 shadow-md z-50">
+    <header className="fixed top-0 left-0 w-full backdrop-blur-md border-b border-white/10 shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-24">
         {/* Logo */}
         <div className="text-2xl font-bold text-black">Abdulbasit</div>
 
         {/* Menu Button (Visible on Mobile Only) */}
         <button
-          className="inline-flex items-center justify-center p-2 rounded-md text-black hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white lg:hidden"
+          className="inline-flex items-center justify-center p-2 rounded-md text-black hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white lg:hidden"
           onClick={toggleMenu}
+          aria-label="Toggle Menu"
         >
           <svg
-            className={`h-6 w-6 transition-transform ${isOpen ? 'rotate-90' : ''}`}
+            className={`h-6 w-6 transition-transform ease-in-out duration-300 ${isOpen ? 'rotate-90' : ''}`}
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -34,54 +40,62 @@ const Header = () => {
           </svg>
         </button>
 
-        {/* Navigation Links */}
+        {/* Navigation Menu */}
         <nav
-          className={`lg:flex lg:items-center lg:space-x-8 space-y-4 lg:space-y-0 absolute lg:static inset-x-0 top-24 left-1/2 transform -translate-x-1/2 bg-white/30 lg:bg-transparent backdrop-blur-md border-t lg:border-none border-white/10 transition-all duration-300 ${
-            isOpen
-              ? 'opacity-100 visible top-16 ease-in-out duration-300'
-              : 'opacity-0 invisible top-[-100%]'
-          } lg:opacity-100 lg:visible lg:top-auto lg:left-auto lg:transform-none lg:flex-row`}
+          className={`fixed inset-x-0 top-0 bg-black bg-opacity-80 text-white flex flex-col items-center justify-center gap-8 transition-transform transform ease-in-out duration-300 ${
+            isOpen ? 'translate-y-24' : '-translate-y-full'
+          } lg:static lg:flex-row lg:bg-transparent lg:translate-y-0 lg:text-black lg:gap-4`}
         >
-          {/* Link to scroll to About section */}
-          <a
-            href="#about"
-            className="block text-black lg:text-black hover:text-yellow-500 transition-all transform duration-300 cursor-pointer text-center"
+          <Link
+            to="about"
+            className="cursor-pointer text-2xl lg:text-base hover:text-yellow-500 transition-colors"
+            smooth={true}
+            duration={500}
+            offset={-70}
+            onClick={handleMenuItemClick}
           >
-            About me
-          </a>
-          
-          {/* Link to scroll to Skills section */}
-          <a
-            href="#skills"
-            className="block text-black lg:text-black hover:text-yellow-500 transition-all transform duration-300 cursor-pointer text-center"
+            About Me
+          </Link>
+          <Link
+            to="skills"
+            className="text-2xl cursor-pointer lg:text-base hover:text-yellow-500 transition-colors"
+            smooth={true}
+            duration={500}
+            offset={-70}
+            onClick={handleMenuItemClick}
           >
             Skills
-          </a>
-
-          {/* Link to scroll to Timeline section */}
-          <a
-            href="#timeline"
-            className="block text-black lg:text-black hover:text-yellow-500 transition-all transform duration-300 cursor-pointer text-center"
+          </Link>
+          <Link
+            to="timeline"
+            className="text-2xl cursor-pointer lg:text-base hover:text-yellow-500 transition-colors"
+            smooth={true}
+            duration={500}
+            offset={-70}
+            onClick={handleMenuItemClick}
           >
             Timeline
-          </a>
-
-          {/* Link to scroll to Projects section */}
-          <a
-            href="#projects"
-            className="block text-black lg:text-black hover:text-yellow-500 transition-all transform duration-300 cursor-pointer text-center"
+          </Link>
+          <Link
+            to="projects"
+            className="text-2xl cursor-pointer lg:text-base hover:text-yellow-500 transition-colors"
+            smooth={true}
+            duration={500}
+            offset={-70}
+            onClick={handleMenuItemClick}
           >
             Projects
-          </a>
-
-          {/* Centered Button (Contact me) */}
-          <div className="flex justify-center lg:ml-auto lg:mr-auto">
-            <a href="#contact">
-              <button className="text-black bg-yellow-500 hover:bg-yellow-600 py-2 px-4 rounded-md transition-all transform duration-300">
-                Contact me
-              </button>
-            </a>
-          </div>
+          </Link>
+          <Link
+            to="contact"
+            className="text-2xl cursor-pointer lg:text-base bg-yellow-500 text-black px-6 py-2 rounded-lg hover:bg-yellow-600 transition-transform"
+            smooth={true}
+            duration={500}
+            offset={-70}
+            onClick={handleMenuItemClick}
+          >
+            Contact Me
+          </Link>
         </nav>
       </div>
     </header>
