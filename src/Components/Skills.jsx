@@ -79,13 +79,11 @@ const Skills = () => {
         </p>
       </div>
 
-      {/* Layout with Description on the left and Skills on the right */}
       <div className="flex flex-col md:flex-row gap-6">
         {/* Description Section */}
         <div className="w-full md:w-2/3">
           {selectedSkill ? (
             <div className="bg-gray-100 p-6 rounded-lg shadow-md flex items-start space-x-4">
-              {/* Display the selected skill's icon alongside the description */}
               <div className="flex items-center justify-center">
                 {selectedSkill.icon}
               </div>
