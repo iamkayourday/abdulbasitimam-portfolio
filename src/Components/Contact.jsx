@@ -109,7 +109,7 @@ const Contact = () => {
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700"
+                className="flex items-center gap-2 bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-yellow-700"
               >
                 <FiSend className="text-lg" /> {/* Added the send icon */}
                 Send Message
