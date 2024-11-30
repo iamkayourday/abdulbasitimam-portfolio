@@ -134,7 +134,7 @@ const Contact = () => {
           <div className="flex items-center justify-between bg-white p-4 rounded-lg shadow-lg">
             <div>
               <h3 className="text-lg font-bold">Phone</h3>
-              <p className="text-gray-700">+2349025021272</p>
+              <p className="text-gray-700">+234 902 502 1272</p>
             </div>
             <FiClipboard
               className="text-2xl text-blue-600 cursor-pointer hover:text-blue-800"
