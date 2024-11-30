@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Download from './Download';
-import ColorIcon from './ColorIcon';
+
 
 const About = () => {
   return (
@@ -71,7 +71,7 @@ const About = () => {
           </div>
         </div>
       </motion.div>
-      {/* <ColorIcon /> */}
+ 
     </div>
   );
 };
