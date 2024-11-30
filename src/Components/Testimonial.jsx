@@ -24,6 +24,7 @@ const Testimonial = () => {
       text: "Tempore mollitia velit ipsum facere sequi porro commodi. Quia eos sapiente reiciendis quam voluptatum, eius expedita nemo nihil harum iure esse. Nemo.",
       rating: 4 // Rating out of 5
     }
+    
   ];
   // Function to render stars based on rating
   const renderStars = (rating) => {
