@@ -13,7 +13,7 @@ const Projects = () => {
     },
     {
       title: "Hair by May",
-      description: "Redesign of the entire website of Hair by May.Focusing mobile!",
+      description: "Design of Hair by May's entire website, with a primary focus on mobile optimization.",
       imageUrl: "hairbymay-desktop.jpg",
       link: "https://hairbymay.vercel.app/",
       technologies: ["React", "Tailwind Css", "Hooks"]
