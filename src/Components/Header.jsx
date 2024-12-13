@@ -42,9 +42,9 @@ const Header = () => {
 
         {/* Navigation Menu */}
         <nav
-          className={`fixed inset-x-0 top-0 bg-black bg-opacity-80 text-white flex flex-col items-center justify-center gap-8 transition-transform transform ease-in-out duration-300 ${
-            isOpen ? 'translate-y-24' : '-translate-y-full'
-          } lg:static lg:flex-row lg:bg-transparent lg:translate-y-0 lg:text-black lg:gap-4`}
+          className={`fixed inset-x-0 top-0 bg-black bg-opacity-80 text-white flex flex-col items-center justify-center gap-8 transition-transform transform ease-in-out duration-300 lg:static lg:flex-row lg:bg-transparent lg:translate-y-0 lg:text-black lg:gap-4 ${
+            isOpen ? 'translate-y-24' : '-translate-y-full lg:translate-y-0'
+          }`}
         >
           <Link
             to="about"
