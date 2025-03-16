@@ -98,7 +98,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="w-[300px] bg-white shadow-lg rounded-lg p-10 flex-shrink-0 snap-center"
+              className="w-[300px] bg-[#111319] shadow-lg rounded-lg p-10 flex-shrink-0 snap-center"
             >
               {/* Star Rating */}
               <div className="flex space-x-1">
@@ -119,7 +119,7 @@ const Testimonials = () => {
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-gray-600 mt-2">{testimonial.text}</p>
+              <p className="text-gay-200 mt-2 text-gray-200">{testimonial.text}</p>
 
               {/* Customer Image, Name, and Role */}
               <div className="flex items-center space-x-4 mt-4">
@@ -129,8 +129,8 @@ const Testimonials = () => {
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
-                  <p className="font-semibold text-text-[#FF685B]">{testimonial.name}</p>
-                  <p className="text-sm text-gray-600">{testimonial.role}</p>
+                  <p className="font-semibold text-yellow-500">{testimonial.name}</p>
+                  <p className="text-sm text-gray-400">{testimonial.role}</p>
                 </div>
               </div>
             </div>
