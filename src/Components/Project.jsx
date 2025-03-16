@@ -9,21 +9,37 @@ const Projects = () => {
       description: "Creation 'from scratch' of my portfolio.",
       imageUrl: "abdulbasitimam-desktop.jpg",
       link: "https://abdulbasitimam.vercel.app/",
-      technologies: ["React", "Tailwind Css", "Hooks"]
-    },
-    {
-      title: "Hair by May",
-      description: "Design of Hair by May's entire website, with a primary focus on mobile optimization.",
-      imageUrl: "hairbymay-desktop.jpg",
-      link: "https://hairbymay.vercel.app/",
-      technologies: ["React", "Tailwind Css", "Hooks"]
+      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"]
     },
     {
       title: "YumFind",
-      description: "A web application for sharing and discovering recipes.",
+      description: "YumFind is your recipe-sharing web application that helps users discover, save, and manage their favorite recipes.",
       imageUrl: "yum-find-desktop.jpg",
       link: "https://yum-find.vercel.app/",
-      technologies: ["React", "Tailwind Css", "Hooks"]
+            technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"]
+
+    },
+    {
+      title: "Hair by May",
+      description: "Redesign of the entire front part of Hair by May website with a primary focus on mobile optimization.",
+      imageUrl: "hairbymay-desktop.jpg",
+      link: "https://hairbymay.vercel.app/",
+            technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"]
+
+    },
+    {
+      title: "Kulinary Kompass",
+      description: "Kulinary Kompass is a culinary guide designed to empower young adults, especially those in care, to gain confidence in the kitchen while staying on budget.",
+      imageUrl: "Kulinary-Kompass.png",
+      link: "https://kulinarykompass.co.uk/",
+      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"]
+    },
+    {
+      title: "Maid In Castle",
+      description: "Maid in Castle is a professional cleaning service dedicated to creating healthier, happier homes through top-quality and eco-friendly cleaning solutions.",
+      imageUrl: "Maid-in-castle.png",
+      link: "https://maidincastle.vercel.app/",
+      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"]
     },
     {
       title: "African Market",
@@ -31,16 +47,16 @@ const Projects = () => {
       imageUrl: "wix.jpg",
       link: "https://abdulbasitkayode1.wixsite.com/african-marketplace?page=3",
       technologies: ["Wix"]
-    }
+    },
     // Add more projects here
   ];
 
   return (
-    <div id='projects' className="container mx-auto px-6 py-12">
+    <div id='projects' className="container mx-auto px-6 py-12 mt-20">
       {/* Header Section */}
       <header className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-gray-800">My Projects</h1>
-        <p className="text-lg text-gray-600 mt-4">
+        <h1 className="text-4xl font-bold text-yellow-500">My Projects</h1>
+        <p className="text-lg text-gray-400 mt-4">
           Here are some of the projects I have worked on, showcasing various technologies and solutions.
         </p>
       </header>
