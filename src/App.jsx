@@ -9,6 +9,7 @@ import Contact from "./Components/Contact";
 import AIChatWidget from "./Components/AiChatWidget";
 import Testimonial from "./Components/Testimonial";
 import BentoGrid from "./Components/BentoGrid";
+import Services from "./Components/Services";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <BentoGrid />
         <Skills />
         <Timeline />
+        <Services />
         <Project />
         <Contact />
         <Testimonial />
