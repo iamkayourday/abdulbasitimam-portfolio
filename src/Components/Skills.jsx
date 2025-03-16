@@ -60,7 +60,7 @@ const skills = [
   {
     name: "GitHub",
     rating: 4,
-    icon: <FaGithub className="w-16 h-16" color="#181717" />,
+    icon: <FaGithub className="w-16 h-16" color="#000" />,
     description:
       "GitHub is a platform for hosting and collaborating on Git repositories.",
     iconColor: "#181717", // Add icon color
@@ -140,13 +140,13 @@ const SkillCard = ({ skill, index, onClick }) => {
         onClick={() => onClick(skill)}
       >
         {/* Rounded full skill icon */}
-        <div className="w-24 h-24 flex items-center justify-center bg-white shadow-lg rounded-full border-2 border-gray-300">
+        <div className="w-24 h-24 flex items-center justify-center shadow-lg rounded-full border-2 border-gray-300">
           {skill.icon}
         </div>
       </motion.div>
 
       {/* Skill name */}
-      <div className="mt-2 text-sm font-semibold text-gray-800 text-nowrap mb-5">
+      <div className="mt-2 text-sm font-semibold text-gray-400 text-nowrap mb-5">
         {skill.name}
       </div>
     </div>
@@ -168,16 +168,16 @@ const Skills = () => {
     >
       {/* Introduction Section */}
       <div className="text-center">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-4">
+        <h2 className="text-4xl font-semibold text-yellow-500 mb-4 mt-20">
           Skills Overview
         </h2>
-        <p className="text-lg text-gray-600">
+        <p className="text-lg text-white">
         In this section, you can explore the key skills I’ve acquired as a frontend developer. These are the core technologies and tools I use to build responsive, dynamic, and interactive web applications.
         </p>
       </div>
 
       {/* Label above skills grid */}
-      <div className="text-center text-gray-600 mb-4">
+      <div className="text-center text-white mb-4">
         <p>
           Hover over a skill to see proficiency level. Click to see details.
         </p>
@@ -187,9 +187,9 @@ const Skills = () => {
         {/* Description Section */}
         <div className="w-full md:w-2/3 top-4 h-fit mb-10">
           {selectedSkill ? (
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md flex items-start space-x-4">
+            <div className="border border-yellow-500 p-6 pl-0 pt-0 rounded-lg shadow-md flex items-start space-x-4">
               {/* Vertical stars at the left edge */}
-              <div className="flex flex-col space-y-1">
+              <div className="flex flex-col space-y-1 bg-yellow-500 p-3 rounded-tl-lg rounded-br-2xl py-8">
                 {[...Array(5)].map((_, i) => (
                   <svg
                     key={i}
@@ -213,10 +213,10 @@ const Skills = () => {
 
                 {/* Text below the icon */}
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                  <h3 className="text-2xl font-bold text-gray-300 mb-4">
                     {selectedSkill.name}
                   </h3>
-                  <p className="text-lg text-gray-600">
+                  <p className="text-lg text-gray-400">
                     {selectedSkill.description}
                   </p>
                 </div>
