@@ -29,17 +29,17 @@ const About = () => {
           <div className="w-full lg:w-1/2">
             {/* Name Animation */}
             <motion.h1
-              className="text-4xl font-extrabold text-gray-900 mb-4"
+              className="text-6xl font-extrabold text-yellow-500 mb-4"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              Abdulbasit Imam
+              Abdulbasit <br /><span className='ml-20'>Kayode Imam</span> 
             </motion.h1>
 
             {/* Subtitle Animation */}
             <motion.h2
-              className="text-xl font-medium text-gray-600 mb-6"
+              className="text-xl font-medium text-white mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
@@ -49,7 +49,7 @@ const About = () => {
 
             {/* Description Paragraph Animation */}
             <motion.p
-              className="text-lg text-gray-700 leading-relaxed mb-8"
+              className="text-lg text-white leading-relaxed mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
