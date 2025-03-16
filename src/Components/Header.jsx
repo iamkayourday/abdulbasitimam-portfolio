@@ -16,11 +16,11 @@ const Header = () => {
     <header className="fixed top-0 left-0 w-full backdrop-blur-md border-b border-white/10 shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-24">
         {/* Logo */}
-        <div className="text-2xl font-bold text-black">Abdulbasit</div>
+        <div className="text-2xl font-bold text-white">Abdulbasit</div>
 
         {/* Menu Button (Visible on Mobile Only) */}
         <button
-          className="inline-flex items-center justify-center p-2 rounded-md text-black hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white lg:hidden"
+          className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white lg:hidden"
           onClick={toggleMenu}
           aria-label="Toggle Menu"
         >
@@ -48,63 +48,73 @@ const Header = () => {
         >
           <Link
             to="about"
-            className="cursor-pointer text-2xl lg:text-base hover:text-yellow-500 transition-colors"
+            className="cursor-pointer text-2xl lg:text-base hover:text-yellow-500 transition-colors text-white"
             smooth={true}
             duration={500}
             offset={-70}
             onClick={handleMenuItemClick}
           >
-            About Me
+            ABOUT ME
           </Link>
           <Link
             to="skills"
-            className="text-2xl cursor-pointer lg:text-base hover:text-yellow-500 transition-colors"
+            className="text-2xl cursor-pointer lg:text-base hover:text-yellow-500 transition-colors text-white"
             smooth={true}
             duration={500}
             offset={-70}
             onClick={handleMenuItemClick}
           >
-            Skills
+            SKILLS
           </Link>
           <Link
             to="timeline"
-            className="text-2xl cursor-pointer lg:text-base hover:text-yellow-500 transition-colors"
+            className="text-2xl cursor-pointer lg:text-base hover:text-yellow-500 transition-colors text-white"
             smooth={true}
             duration={500}
             offset={-70}
             onClick={handleMenuItemClick}
           >
-            Timeline
+            TIMELINE
+          </Link>
+          <Link
+            to="services"
+            className="text-2xl cursor-pointer lg:text-base hover:text-yellow-500 transition-colors text-white"
+            smooth={true}
+            duration={500}
+            offset={-70}
+            onClick={handleMenuItemClick}
+          >
+            SERVICES
           </Link>
           <Link
             to="projects"
-            className="text-2xl cursor-pointer lg:text-base hover:text-yellow-500 transition-colors"
+            className="text-2xl cursor-pointer lg:text-base hover:text-yellow-500 transition-colors text-white"
             smooth={true}
             duration={500}
             offset={-70}
             onClick={handleMenuItemClick}
           >
-            Projects
+            PROJECTS
           </Link>
           <Link
             to="testimonial"
-            className="text-2xl cursor-pointer lg:text-base hover:text-yellow-500 transition-colors"
+            className="text-2xl cursor-pointer lg:text-base hover:text-yellow-500 transition-colors text-white"
             smooth={true}
             duration={500}
             offset={-70}
             onClick={handleMenuItemClick}
           >
-            Testimonial
+            TESTIMONIALS
           </Link>
           <Link
             to="contact"
-            className="text-2xl cursor-pointer lg:text-base bg-yellow-500 text-black px-6 py-2 rounded-lg hover:bg-yellow-600 transition-transform"
+            className="text-2xl cursor-pointer lg:text-base bg-yellow-500 px-6 py-2 rounded-lg hover:bg-yellow-600 transition-transform text-white"
             smooth={true}
             duration={500}
             offset={-70}
             onClick={handleMenuItemClick}
           >
-            Contact Me
+            CONTACT ME
           </Link>
         </nav>
       </div>
