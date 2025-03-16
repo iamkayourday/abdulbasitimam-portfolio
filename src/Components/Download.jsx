@@ -11,7 +11,7 @@ const DownloadButton = () => {
         const cvUrl = "/path-to-your-cv.pdf"; // Replace with actual CV file path
         const link = document.createElement("a");
         link.href = cvUrl;
-        link.download = "Abdulbasit.pdf"; // Optional: specify the file name for download
+        link.download = "Abdulbasit-resume.pdf"; 
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -22,17 +22,17 @@ const DownloadButton = () => {
     >
       {/* Text and icon */}
       <span
-        className={`transition-all duration-300 ${isHovered ? "opacity-0" : "opacity-100"} flex items-center gap-2`}
+        className={`transition-all duration-300 ${isHovered ? "opacity-0" : "opacity-100"} flex items-center gap-2 text-white`}
       >
         Download CV
         <FaDownload
-          className="transition-all duration-300 opacity-100"
+          className="transition-all duration-300 opacity-100 text-white"
         />
       </span>
 
       {/* Only icon in the center when hovered */}
       <FaDownload
-        className={`transition-all duration-300 absolute inset-0 m-auto opacity-0 ${isHovered ? "opacity-100" : ""}`}
+        className={`transition-all duration-300 absolute inset-0 m-auto opacity-0 ${isHovered ? "opacity-100 text-white" : ""}`}
         style={{ fontSize: "20px" }}
       />
     </button>
