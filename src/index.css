@@ -15,22 +15,12 @@ body {
     /* background-color: #111319; */
   }
 
+
 /* Dark Mode Styles */
 body.dark {
   background-color: #11141d; /* Dark background */
   color: #E0E0E0; /* Light text for dark mode */
 }
-
-/* Custom Torch Cursor */
-* {
-    cursor: url('https://path/to/torch-cursor.svg'), auto; 
-  }
-  
-  /* Hover effect for torch-like effect */
-  nav a:hover {
-    transform: scale(1.1); /* Slightly enlarges the element on hover */
-    color: #ffcc00; /* Change to a glowing yellow/torch color */
-  }
 
   @keyframes fadeUp {
     0% {

@@ -9,9 +9,9 @@ const About = () => {
       {/* Main Section Animation on Page Load */}
       <motion.div
         className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 p-8"
-        initial={{ opacity: 0, y: 50 }}  // Starts with low opacity and a little below
-        animate={{ opacity: 1, y: 0 }}  // Fades in and moves up to its final position
-        transition={{ duration: 0.8 }}  // Animation duration
+        initial={{ opacity: 0, y: 50 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 0.8 }}  
       >
         {/* Main Flex Container */}
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">

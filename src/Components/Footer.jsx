@@ -1,53 +1,110 @@
-import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'; // Social media icons
+import React from "react";
+import { FaGithub, FaLinkedin, FaPhone, FaEnvelope } from "react-icons/fa"; // Icons for contact details
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="max-w-screen-lg mx-auto px-6 flex flex-col md:flex-row justify-between items-center md:items-start">
-        {/* Footer Left Section: Footer Title and Description */}
-        <div className="text-center md:text-left mb-6 md:mb-0">
-          <h3 className="text-3xl font-bold">Abdulbasit from Nigeria</h3>
-          <p className="text-base text-gray-400 mt-3 max-w-md leading-relaxed">
-            Passionate frontend developer dedicated to crafting dynamic, interactive, and responsive web experiences. Let's build something amazing together.
-          </p>
+    <footer className="text-black py-12">
+      <div className="max-w-screen-lg mx-auto px-6 flex flex-col items-center space-y-8">
+        {/* Logo */}
+        <div className="text-center">
+          <h3 className="text-3xl font-bold">Abdulbasit</h3>
         </div>
 
-        {/* Footer Right Section: Social Media Links */}
-        <div className="flex space-x-8">
-          <a
-            href="https://github.com/Abdulbasit"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="text-gray-400 hover:text-white transition-transform duration-300 transform hover:scale-110"
-          >
-            <FaGithub size={35} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/abdulbasit"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="text-gray-400 hover:text-white transition-transform duration-300 transform hover:scale-110"
-          >
-            <FaLinkedin size={35} />
-          </a>
-          <a
-            href="https://twitter.com/Abdulbasit"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Twitter"
-            className="text-gray-400 hover:text-white transition-transform duration-300 transform hover:scale-110"
-          >
-            <FaTwitter size={35} />
-          </a>
+        {/* My Links */}
+        <div className="flex flex-col items-center space-y-4">
+          {/* <h4 className="text-xl font-semibold">My Links</h4> */}
+          <div className="flex flex-col items-center space-y-4">
+            <a
+              href="#about"
+              className="relative text-gray-600 hover:text-black transition-colors duration-300 group"
+            >
+              About
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a
+              href="#skills"
+              className="relative text-gray-600 hover:text-black transition-colors duration-300 group"
+            >
+              Skills
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a
+              href="#timeline"
+              className="relative text-gray-600 hover:text-black transition-colors duration-300 group"
+            >
+              Timeline
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a
+              href="#projects"
+              className="relative text-gray-600 hover:text-black transition-colors duration-300 group"
+            >
+              Projects
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a
+              href="#testimonial"
+              className="relative text-gray-600 hover:text-black transition-colors duration-300 group"
+            >
+              Testimonials
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a
+              href="#contact"
+              className="relative text-gray-600 hover:text-black transition-colors duration-300 group"
+            >
+              Contact
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+          </div>
         </div>
-      </div>
 
-      {/* Footer Bottom Section: Copyright */}
-      <div className="mt-8 text-center text-sm text-gray-500 border-t border-gray-700 pt-4">
-        <p>© 2024 Abdulbasit. All Rights Reserved.</p>
+        {/* Contact Details */}
+        <div className="flex flex-col items-center space-y-4">
+          {/* <h4 className="text-xl font-semibold mt-10">Contact Details</h4> */}
+          <div className="flex space-x-6">
+            {/* Phone */}
+            <a
+              href="tel:+2349025021272"
+              className="flex items-center justify-center w-20 h-20 border-2 border-yellow-500 rounded-full text-gray-600 hover:text-black hover:border-black transition-colors duration-300"
+            >
+              <FaPhone className="text-2xl" />
+            </a>
+
+            {/* Email */}
+            <a
+              href="mailto:abdulbasitkayode@gmail.com"
+              className="flex items-center justify-center w-20 h-20 border-2 border-yellow-500 rounded-full text-gray-600 hover:text-black hover:border-black transition-colors duration-300"
+            >
+              <FaEnvelope className="text-2xl" />
+            </a>
+
+            {/* GitHub */}
+            <a
+              href="https://github.com/Abdulbasit"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-20 h-20 border-2 border-yellow-500 rounded-full text-gray-600 hover:text-black hover:border-black transition-colors duration-300"
+            >
+              <FaGithub className="text-2xl" />
+            </a>
+
+            {/* LinkedIn */}
+            <a
+              href="https://www.linkedin.com/in/abdulbasit"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-20 h-20 border-2 border-yellow-500 rounded-full text-gray-600 hover:text-black hover:border-black transition-colors duration-300"
+            >
+              <FaLinkedin className="text-2xl" />
+            </a>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-8 text-center text-sm text-gray-600 border-t border-gray-400 pt-4">
+          <p>© 2025 Abdulbasit. All Rights Reserved.</p>
+        </div>
       </div>
     </footer>
   );
