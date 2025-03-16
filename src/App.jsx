@@ -9,12 +9,11 @@ import Contact from "./Components/Contact";
 import AIChatWidget from "./Components/AiChatWidget";
 import Testimonial from "./Components/Testimonial";
 import BentoGrid from "./Components/BentoGrid";
-import { ThemeProvider } from "./Components/ThemeContext";
 
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
-      <ThemeProvider>
+      
       <Header />
       <main className="flex-grow">
         <About />
@@ -27,7 +26,6 @@ function App() {
         <AIChatWidget />
       </main>
       <Footer />
-      </ThemeProvider>
     </div>
   );
 }
