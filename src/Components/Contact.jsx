@@ -53,10 +53,10 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="container mx-auto px-6 py-12">
+    <div id="contact" className="container mx-auto px-2 py-12 mt-20 max-w-7xl">
       <header className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-gray-800">Contact</h1>
-        <p className="text-lg text-gray-600 mt-4">
+        <h1 className="text-4xl font-bold text-yellow-500">Contact</h1>
+        <p className="text-lg text-gray-200 mt-4">
           I'd love to hear from you! Please fill out the form below to reach
           out.
         </p>
@@ -73,7 +73,7 @@ const Contact = () => {
 
           <form
             onSubmit={handleSubmit}
-            className="space-y-6 bg-white p-6 rounded-lg shadow-lg"
+            className="space-y-6  p-3 rounded-lg"
           >
             {/* Last Name and First Name */}
             <div className="grid grid-cols-2 gap-4">
@@ -84,7 +84,7 @@ const Contact = () => {
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleChange}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 placeholder-transparent"
+                  className="w-full p-3 bg-[#11141d]  text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 placeholder-transparent"
                   required
                 />
                 <label
@@ -101,7 +101,7 @@ const Contact = () => {
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleChange}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 placeholder-transparent"
+                  className="w-full p-3 bg-[#11141d] text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 placeholder-transparent"
                   required
                 />
                 <label
@@ -122,7 +122,7 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 placeholder-transparent"
+                  className="w-full p-3 bg-[#11141d] text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 placeholder-transparent"
                   required
                 />
                 <label
@@ -139,7 +139,7 @@ const Contact = () => {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 placeholder-transparent"
+                  className="w-full p-3 bg-[#11141d] text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 placeholder-transparent"
                   required
                 />
                 <label
@@ -158,7 +158,7 @@ const Contact = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 placeholder-transparent"
+                className="w-full p-3 bg-[#11141d] text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 placeholder-transparent"
                 rows="5"
                 required
               />
@@ -174,9 +174,9 @@ const Contact = () => {
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="flex items-center gap-2 bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-yellow-700"
+                className="mt-16 text-lg flex items-center gap-2 bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-yellow-700"
               >
-                <FiSend className="text-lg" /> {/* Added the send icon */}
+                <FiSend className="bg-white text-yellow-500 text-5xl p-2 rounded-lg" /> {/* Added the send icon */}
                 Send Message
               </button>
             </div>
@@ -184,7 +184,8 @@ const Contact = () => {
         </div>
 
         {/* Contact Details */}
-        <div className="space-y-6 bg-gray-300 p-6 rounded-xl shadow-md">
+        <div className="space-y-6 bg-yellow-500 p-6 rounded-xl shadow-md">
+        <h1 className="text-6xl text-gray-400 font-semibold">GET IN TOUCH!</h1>
           {[
             {
               label: "Email",
@@ -219,15 +220,16 @@ const Contact = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="flex items-center gap-4 bg-white p-5 rounded-xl shadow-lg transition duration-300 hover:shadow-xl"
+              className="flex items-center gap-4 bg-[#111319] p-5 rounded-xl shadow-lg transition duration-300 hover:shadow-xl"
             >
+             
               {item.icon}
               <div>
-                <h3 className="text-lg font-bold">{item.label}</h3>
-                <p className="text-gray-700">{item.value}</p>
+                <h3 className="text-lg font-bold text-gray-200">{item.label}</h3>
+                <p className="text-gray-300">{item.value}</p>
               </div>
               <FiClipboard
-                className="text-2xl text-yellow-500 cursor-pointer hover:text-blue-800 ml-auto transition duration-200"
+                className="text-2xl text-yellow-500 cursor-pointer ml-auto transition duration-200"
                 aria-label={`Copy ${item.label}`}
                 onClick={() => handleCopy(item.value, item.label)}
               />
@@ -235,7 +237,7 @@ const Contact = () => {
           ))}
 
           {copied && (
-            <p className="text-center text-green-600 font-semibold mt-2 animate-fadeIn">
+            <p className="text-center text-gray-400 font-semibold mt-2 animate-fadeIn">
               {copied} copied successfully!
             </p>
           )}
