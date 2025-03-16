@@ -1,129 +1,242 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { motion } from "framer-motion";
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaGitAlt, FaGithub, FaNodeJs, FaFigma, FaNetworkWired } from "react-icons/fa";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJsSquare,
+  FaReact,
+  FaGitAlt,
+  FaGithub,
+  FaNodeJs,
+  FaFigma,
+  FaNetworkWired,
+} from "react-icons/fa";
 import { SiTailwindcss, SiMongodb, SiExpress } from "react-icons/si";
 
 // Skills data
 const skills = [
-  { name: "HTML", rating: 5, icon: <FaHtml5 size={30} color="#E44D26" />, description: "HTML is the standard language for creating web pages." },
-  { name: "CSS", rating: 3, icon: <FaCss3Alt size={30} color="#2965F1" />, description: "CSS is used to style and layout web pages." },
-  { name: "JavaScript", rating: 3, icon: <FaJsSquare size={30} color="#F7DF1E" />, description: "JavaScript makes websites interactive and dynamic." },
-  { name: "React", rating: 4, icon: <FaReact size={30} color="#61DAFB" />, description: "React is a JavaScript library for building user interfaces." },
-  { name: "Tailwind CSS", rating: 4, icon: <SiTailwindcss size={30} color="#38BDF8" />, description: "Tailwind CSS is a utility-first CSS framework." },
-  { name: "Git", rating: 4, icon: <FaGitAlt size={30} color="#F05032" />, description: "Git is a version control system for tracking code changes." },
-  { name: "GitHub", rating: 4, icon: <FaGithub size={30} color="#181717" />, description: "GitHub is a platform for hosting and collaborating on Git repositories." },
-  { name: "MongoDB", rating: 1, icon: <SiMongodb size={30} color="#47A248" />, description: "MongoDB is a NoSQL database for storing data." },
-  { name: "Express", rating: 2, icon: <SiExpress size={30} color="#000000" />, description: "Express is a web application framework for Node.js." },
-  { name: "Node.js", rating: 3, icon: <FaNodeJs size={30} color="#8CC84B" />, description: "Node.js is a runtime for executing JavaScript on the server." },
-  { name: "Figma", rating: 4, icon: <FaFigma size={30} color="#F24E1E" />, description: "Figma is a collaborative design tool for interface design and prototyping." },
-  { name: "API Integration", rating: 3, icon: <FaNetworkWired size={30} color="#006F8E" />, description: "API integration involves connecting an application with external services to exchange data." }
+  {
+    name: "HTML",
+    rating: 5,
+    icon: <FaHtml5 className="w-16 h-16" color="#E44D26" />,
+    description: "HTML is the standard language for creating web pages.",
+    iconColor: "#E44D26", // Add icon color
+  },
+  {
+    name: "CSS",
+    rating: 3,
+    icon: <FaCss3Alt className="w-16 h-16" color="#2965F1" />,
+    description: "CSS is used to style and layout web pages.",
+    iconColor: "#2965F1", // Add icon color
+  },
+  {
+    name: "JavaScript",
+    rating: 3,
+    icon: <FaJsSquare className="w-16 h-16" color="#F7DF1E" />,
+    description: "JavaScript makes websites interactive and dynamic.",
+    iconColor: "#F7DF1E", // Add icon color
+  },
+  {
+    name: "React",
+    rating: 4,
+    icon: <FaReact className="w-16 h-16" color="#61DAFB" />,
+    description: "React is a JavaScript library for building user interfaces.",
+    iconColor: "#61DAFB", // Add icon color
+  },
+  {
+    name: "Tailwind CSS",
+    rating: 4,
+    icon: <SiTailwindcss className="w-16 h-16" color="#38BDF8" />,
+    description: "Tailwind CSS is a utility-first CSS framework.",
+    iconColor: "#38BDF8", // Add icon color
+  },
+  {
+    name: "Git",
+    rating: 4,
+    icon: <FaGitAlt className="w-16 h-16" color="#F05032" />,
+    description: "Git is a version control system for tracking code changes.",
+    iconColor: "#F05032", // Add icon color
+  },
+  {
+    name: "GitHub",
+    rating: 4,
+    icon: <FaGithub className="w-16 h-16" color="#181717" />,
+    description:
+      "GitHub is a platform for hosting and collaborating on Git repositories.",
+    iconColor: "#181717", // Add icon color
+  },
+  {
+    name: "Figma",
+    rating: 4,
+    icon: <FaFigma className="w-16 h-16" color="#F24E1E" />,
+    description:
+      "Figma is a collaborative design tool for interface design and prototyping.",
+    iconColor: "#F24E1E", // Add icon color
+  },
+  {
+    name: "API Integration",
+    rating: 3,
+    icon: <FaNetworkWired className="w-16 h-16" color="#006F8E" />,
+    description:
+      "API integration involves connecting an application with external services to exchange data.",
+    iconColor: "#006F8E", // Add icon color
+  },
+  {
+    name: "But still Human",
+    rating: 5,
+    icon: (
+      <img
+        src="/gif.gif"
+        alt="Adaptability"
+        className="w-16 h-16 rounded-full"
+      />
+    ),
+    description:
+      "Adaptability and quick learning of new technologies and tools to meet specific project requirements.",
+    iconColor: "#000000", // Default color for non-icon skills
+  },
 ];
 
-// Skill Card Component
-const SkillCard = ({ skill, index, onClick, isSelected }) => {
+const SkillCard = ({ skill, index, onClick }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <motion.div
-      className={`relative flex flex-col items-center justify-center p-4 bg-white rounded-lg w-24 h-24 mx-2 my-4 transform hover:scale-110 transition duration-300 cursor-pointer border-4 border-gray-300 overflow-hidden`}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.2, type: "spring", stiffness: 100 }}
-      onClick={() => onClick(skill)}
+    <div
+      className="relative flex flex-col items-center"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Stars shown only when skill is selected */}
-      {isSelected && (
-        <div className="absolute top-[2px] left-1/2 transform -translate-x-1/2 flex items-center justify-center space-x-1">
+      {/* Stars above the circle (shown on hover) */}
+      {isHovered && (
+        <motion.div
+          className="absolute -top-8 left-1 transform -translate-x-1/2 flex space-x-1 bg-white/90 rounded-full px-2 py-1 shadow-sm"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", stiffness: 200 }}
+        >
           {[...Array(5)].map((_, i) => (
-            <svg
+            <motion.svg
               key={i}
               xmlns="http://www.w3.org/2000/svg"
-              width="14"
-              height="14"
-              fill={i < skill.rating ? "#FFD700" : "#E0E0E0"}
+              width="16"
+              height="16"
+              fill={i < skill.rating ? skill.iconColor : "#E0E0E0"} // Use skill.iconColor
               viewBox="0 0 24 24"
+              whileHover={{ scale: 1.2 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
               <path d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-6.91-.61L12 2 8.91 8.63 2 9.24l5.46 4.73L5.82 21z" />
-            </svg>
+            </motion.svg>
           ))}
-        </div>
+        </motion.div>
       )}
 
-      {/* Skill Icon */}
-      <div className="flex items-center justify-center">
-        {skill.icon}
-      </div>
+      {/* Circle with icon */}
+      <motion.div
+        className="relative flex flex-col items-center justify-center cursor-pointer transition-transform transform hover:scale-110"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: index * 0.1, type: "spring", stiffness: 100 }}
+        onClick={() => onClick(skill)}
+      >
+        {/* Rounded full skill icon */}
+        <div className="w-24 h-24 flex items-center justify-center bg-white shadow-lg rounded-full border-2 border-gray-300">
+          {skill.icon}
+        </div>
+      </motion.div>
 
-      {/* Skill Name under the icon */}
-      <div className="mt-2 text-center text-sm font-semibold text-gray-800">
+      {/* Skill name */}
+      <div className="mt-2 text-sm font-semibold text-gray-800 text-nowrap mb-5">
         {skill.name}
       </div>
-    </motion.div>
+    </div>
   );
 };
 
 const Skills = () => {
-  const [selectedSkill, setSelectedSkill] = useState(null);
+  const defaultSkill = skills[skills.length - 1];
+  const [selectedSkill, setSelectedSkill] = useState(defaultSkill);
 
   const handleSkillClick = (skill) => {
-    // Toggle the selected skill
-    setSelectedSkill(selectedSkill === skill ? null : skill);
+    setSelectedSkill(selectedSkill === skill ? defaultSkill : skill);
   };
 
   return (
-    <section id="skills" className="cursor-pointer max-w-screen-lg mx-auto py-12 px-4 flex flex-col gap-12">
+    <section
+      id="skills"
+      className="max-w-screen-lg mx-auto py-12 px-4 flex flex-col gap-12"
+    >
       {/* Introduction Section */}
-      <div className="w-full mb-8 text-center">
-        <h2 id="skills"  className="text-3xl font-semibold text-gray-800 mb-4">Skills Overview</h2>
+      <div className="text-center">
+        <h2 className="text-3xl font-semibold text-gray-800 mb-4">
+          Skills Overview
+        </h2>
         <p className="text-lg text-gray-600">
-          In this section, you can explore the key skills I’ve acquired as a frontend developer.
-          These are the core technologies and tools I use to build responsive, dynamic, and
-          interactive web applications. Click on each skill to learn more about its purpose and
-          importance in the development process.
+        In this section, you can explore the key skills I’ve acquired as a frontend developer. These are the core technologies and tools I use to build responsive, dynamic, and interactive web applications.
+        </p>
+      </div>
+
+      {/* Label above skills grid */}
+      <div className="text-center text-gray-600 mb-4">
+        <p>
+          Hover over a skill to see proficiency level. Click to see details.
         </p>
       </div>
 
       <div className="flex flex-col md:flex-row gap-6">
         {/* Description Section */}
-        <div className="w-full md:w-2/3">
+        <div className="w-full md:w-2/3 top-4 h-fit mb-10">
           {selectedSkill ? (
             <div className="bg-gray-100 p-6 rounded-lg shadow-md flex items-start space-x-4">
-              <div className="flex items-center justify-center">
-                {selectedSkill.icon}
+              {/* Vertical stars at the left edge */}
+              <div className="flex flex-col space-y-1">
+                {[...Array(5)].map((_, i) => (
+                  <svg
+                    key={i}
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill={i < selectedSkill.rating ? selectedSkill.iconColor : "#E0E0E0"} // Use selectedSkill.iconColor
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-6.91-.61L12 2 8.91 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                  </svg>
+                ))}
               </div>
-              <div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">{selectedSkill.name}</h3>
-                <p className="text-lg text-gray-600 mb-4">{selectedSkill.description}</p>
 
-                {/* Stars at the edge */}
-                <div className="flex justify-center mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      fill={i < selectedSkill.rating ? "#FFD700" : "#E0E0E0"}
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 17.27L18.18 21 16.54 13.97 22 9.24l-6.91-.61L12 2 8.91 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                    </svg>
-                  ))}
+              {/* Icon and text */}
+              <div className="flex flex-col items-center">
+                {/* Bigger icon */}
+                <div className="w-20 h-20 flex items-center justify-center mb-4">
+                  {selectedSkill.icon}
+                </div>
+
+                {/* Text below the icon */}
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                    {selectedSkill.name}
+                  </h3>
+                  <p className="text-lg text-gray-600">
+                    {selectedSkill.description}
+                  </p>
                 </div>
               </div>
             </div>
           ) : (
-            <p className="text-lg text-gray-600">Click on a skill to see the description.</p>
+            <p className="text-lg text-gray-600">
+              Click on a skill to see the description.
+            </p>
           )}
         </div>
 
         {/* Skills Section */}
-        <div className="cursor-pointer grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-4 w-full">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-6 w-full">
           {skills.map((skill, index) => (
             <SkillCard
               key={index}
               skill={skill}
               index={index}
               onClick={handleSkillClick}
-              isSelected={selectedSkill === skill}
             />
           ))}
         </div>
