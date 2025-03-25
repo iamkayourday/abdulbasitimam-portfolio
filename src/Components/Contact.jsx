@@ -63,7 +63,7 @@ const Contact = () => {
         </p>
       </header>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 p-2">
         {/* Left Side - Contact Form */}
         <div className="relative group">
           <div className="absolute -inset-1 bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-xl blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
