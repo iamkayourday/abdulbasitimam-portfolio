@@ -94,7 +94,7 @@ const Testimonials = () => {
         </div>
 
         {/* Mobile Slider */}
-        <div className="md:hidden overflow-x-auto scrollbar-hide snap-x flex space-x-6 mt-8 px-2">
+        <div className="md:hidden overflow-x-auto .no-scrollbar scrollbar-hide snap-x flex space-x-6 mt-8 px-2">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
@@ -137,6 +137,17 @@ const Testimonials = () => {
           ))}
         </div>
       </div>
+      <style>
+        {`
+          .no-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+          .no-scrollbar {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+          }
+        `}
+      </style>
     </div>
   );
 };
