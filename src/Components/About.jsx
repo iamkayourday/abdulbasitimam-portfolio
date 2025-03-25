@@ -29,17 +29,17 @@ const About = () => {
           <div className="w-full lg:w-1/2">
             {/* Name Animation */}
             <motion.h1
-              className="text-6xl font-extrabold text-yellow-500 mb-4"
+              className="lg:text-6xl md:text-4xl text-4xl  font-extrabold text-[#e8c826] mb-4 text-center lg:text-left"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              Abdulbasit <br /><span className='ml-20'>Kayode Imam</span> 
+              Abdulbasit <br /><span className='md:ml-20'>Kayode Imam</span> 
             </motion.h1>
 
             {/* Subtitle Animation */}
             <motion.h2
-              className="text-xl font-medium text-white mb-6"
+              className="font-medium text-white mb-6  sm:text-center lg:text-left mt-10 md:text-4xl text-2xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
