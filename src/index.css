@@ -14,7 +14,7 @@ body {
     font-family: 'Poppins', sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
     background-color: #101920;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
   }
 
   .custom-bg2 {
