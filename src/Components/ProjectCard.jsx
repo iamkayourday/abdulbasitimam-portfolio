@@ -12,18 +12,18 @@ const ProjectCard = ({ projectData }) => {
 
   return (
     <animated.div
-      className="max-w-md rounded-lg shadow-lg overflow-hidden transform transition-all duration-500"
+      className="max-w-7xl rounded-lg shadow-lg overflow-hidden transform transition-all duration-500"
       style={animationProps}
     >
       <div className="relative">
         <div
-          className="w-full h-64 bg-cover bg-center rounded-t-lg relative text-white p-4 custom-bg2"
+          className="w-full h-64 bg-cover bg-center rounded-t-lg relative  p-4 custom-bg2"
           style={{
             backgroundImage: `url(${projectData.imageUrl})`,
           }}
         >
           {/* Title Overlay */}
-          <div className="absolute inset-0 bg-black/50 rounded-t-lg"></div>
+          <div className="absolute inset-0 bg-black/40 rounded-t-lg"></div>
           {/* Dark overlay for better text readability */}
           <h2 className="absolute bottom-4 left-4 text-2xl font-semibold z-10">
             {projectData.title}
@@ -33,14 +33,14 @@ const ProjectCard = ({ projectData }) => {
 
       <div className="p-3">
         {/* Project Description */}
-        <p className="text-gray-200 text-sm">{projectData.description}</p>
+        <p className=" text-sm">{projectData.description}</p>
 
         {/* Technologies */}
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-2 text-white">
           {projectData.technologies.map((tech, index) => (
             <span
               key={index}
-              className="bg-yellow-600 text-white text-sm font-semibold py-2 px-4 rounded-full"
+              className="bg-yellow-600 custom  text-sm font-semibold py-2 px-4 rounded-full text-white button-text"
             >
               {tech}
             </span>
@@ -51,10 +51,10 @@ const ProjectCard = ({ projectData }) => {
         <div className="mt-4 flex justify-end">
           <button
             onClick={() => window.open(projectData.link, "_blank")}
-            className="flex items-center gap-2 bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded-full disabled:bg-gray-400 disabled:cursor-not-allowed"
-            disabled // Add this to disable the button
+            className="flex items-center gap-2 custom bg-yellow-600   font-semibold py-2 px-4 rounded-full disabled:bg-gray-400 disabled:cursor-not-allowed"
+            disabled// Add this to disable the button
           >
-            <FaExternalLinkAlt className="text-white" />
+            <FaExternalLinkAlt className="" />
             View Project
           </button>
         </div>

@@ -52,18 +52,18 @@ const Projects = () => {
   ];
 
   return (
-    <div id='projects' className="container mx-auto px-6 py-12 mt-20">
+    <div id='projects' className="container mx-auto lg:px-0 px-4 py-12 mt-20">
       {/* Header Section */}
       <header className="text-center mb-8">
         <h1 className="text-4xl font-bold text-yellow-500">My Projects</h1>
-        <p className="text-lg text-gray-400 mt-4">
+        <p className="text-lg  mt-4">
           Here are some of the projects I have worked on, showcasing various technologies and solutions.
         </p>
       </header>
 
       {/* Projects List */}
       <div className="flex justify-center">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl">
           {myprojects.map((project, index) => (
             <ProjectCard key={index} projectData={project} />
           ))}
