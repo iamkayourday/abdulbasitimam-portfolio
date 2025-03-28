@@ -1,4 +1,3 @@
-// components/ThemeSwitcher.jsx
 import React, { useState, useEffect } from 'react';
 import { FaPalette } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -16,27 +15,24 @@ const ThemeSwitcher = () => {
     { name: 'red', bg: 'bg-[#9d0208]', border: 'border-[#9d0208]'},
     { name: 'light-blue', bg: 'bg-[#a2d2ff]', border: 'border-[#a2d2ff]'},
     { name: 'pink', bg: 'bg-[#edafb8]', border: 'border-[#edafb8]'},
-    
   ];
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'default';
     const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-    
-    // Apply theme while preserving dark mode
+
     const newClasses = [savedTheme];
     if (savedDarkMode) newClasses.push('dark');
-    
+
     document.documentElement.className = newClasses.join(' ');
     setTheme(savedTheme);
   }, []);
 
   const toggleTheme = (selectedTheme) => {
-    // Preserve dark mode state when changing theme
     const darkMode = document.documentElement.classList.contains('dark');
     const newClasses = [selectedTheme];
     if (darkMode) newClasses.push('dark');
-    
+
     document.documentElement.className = newClasses.join(' ');
     localStorage.setItem('theme', selectedTheme);
     setTheme(selectedTheme);
@@ -48,7 +44,7 @@ const ThemeSwitcher = () => {
       {/* Main Theme Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-10 custom h-10 mt-20 md:mt-0 rounded-full flex items-center justify-center shadow-xl transition-all duration-300 bg-yellow-500"
+        className="w-10 h-10 mt-20 md:mt-0 rounded-full flex items-center justify-center shadow-xl transition-all duration-300 bg-yellow-500"
         aria-label="Change theme"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
@@ -58,9 +54,9 @@ const ThemeSwitcher = () => {
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Mobile - Circular Layout */}
+            {/* Mobile & Tablet - Circular Layout */}
             <motion.div
-              className="md:hidden absolute inset-0 flex items-center justify-center"
+              className="lg:hidden absolute inset-0 flex items-center justify-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -90,13 +86,12 @@ const ThemeSwitcher = () => {
 
             {/* Desktop - Horizontal Layout */}
             <motion.div
-              className="hidden md:flex absolute bottom-0 left-14 gap-2 bg-yellow-500 backdrop-blur-0 custom p-2 shadow-lg rounded-lg"
+              className="hidden lg:flex absolute bottom-0 left-14 gap-2 bg-yellow-500 backdrop-blur-0 p-2 shadow-lg rounded-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             >
-              {/* <span className="text-gray-700 font-medium">Choose a color:</span> */}
               {themes.map((t) => (
                 <motion.button
                   key={t.name}
@@ -111,7 +106,6 @@ const ThemeSwitcher = () => {
           </>
         )}
       </AnimatePresence>
-      {/* ... rest of your ThemeSwitcher component remains the same ... */}
     </div>
   );
 };

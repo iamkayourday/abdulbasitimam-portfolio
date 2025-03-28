@@ -1,4 +1,3 @@
-// components/Header.jsx
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
 import { FiMenu, FiX } from "react-icons/fi";
@@ -118,9 +117,9 @@ const Header = () => {
             </div>
           </nav>
 
-          {/* Mobile Controls */}
+          {/* Mobile & Tablet Controls */}
           <div className="flex lg:hidden items-center gap-4">
-            <div className="md:hidden block">
+            <div className="md:block">
               <Mode />
             </div>
             <button
@@ -135,7 +134,7 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile & Tablet Menu Overlay */}
       <div
         className={`fixed inset-0 z-50 overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
@@ -143,22 +142,22 @@ const Header = () => {
       >
         <div
           ref={mobileMenuRef}
-          className={`absolute top-0 left-0 w-full bg-black/95 backdrop-blur-sm flex flex-col items-center pt-2 transition-transform duration-300 ease-in-out ${
+          className={`absolute top-0 left-0 w-full h-full bg-black/95 backdrop-blur-sm flex flex-col items-center justify-center transition-transform duration-300 ease-in-out ${
             isOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >
-          {/* Menu Content */}
-          <div className="relative bg-gradient-to-br from-black to-gray-900 border border-yellow-500/20 rounded-xl p-8 w-full max-w-sm mx-4 shadow-2xl shadow-gray-300/10">
-            <nav className="flex flex-col items-center space-y-5">
+          {/* Menu Content - Adjusted for tablet */}
+          <div className="relative bg-gradient-to-br from-black to-gray-900 border border-yellow-500/20 rounded-xl p-8 w-full max-w-md mx-4 shadow-2xl shadow-gray-300/10">
+            <nav className="flex flex-col items-center space-y-6">
               <Link
                 to="about"
                 smooth={true}
                 duration={500}
                 offset={-70}
-                className="group cursor-pointer transition-all duration-300 mb-10"
+                className="group cursor-pointer transition-all duration-300 mb-8"
                 onClick={closeMenu}
               >
-                <div className="text-2xl font-bold text-white transition-colors duration-300">
+                <div className="text-3xl md:text-4xl font-bold text-white transition-colors duration-300">
                   Abdulbasit
                 </div>
               </Link>
@@ -170,7 +169,7 @@ const Header = () => {
                   smooth={true}
                   duration={500}
                   offset={-70}
-                  className="relative w-full text-center text-white/90 hover:text-white cursor-pointer transition-colors duration-300 py-2 text-2xl group"
+                  className="relative w-full text-center text-white/90 hover:text-white cursor-pointer transition-colors duration-300 py-3 text-xl md:text-2xl group"
                   onClick={closeMenu}
                   activeClass="custom-text text-yellow-500 font-medium"
                   spy={true}
@@ -180,34 +179,27 @@ const Header = () => {
                 </Link>
               ))}
 
-              {/* Dark Mode Toggle in Mobile Menu */}
-              {/* <div className="mt-6 w-full flex justify-center">
-                <div className="bg-white/10 p-3 rounded-lg">
-                  <Mode />
-                </div>
-              </div> */}
-
               <Link
                 to="contact"
                 smooth={true}
                 duration={500}
                 offset={-70}
-                className="w-full mt-6"
+                className="w-full mt-8"
                 onClick={closeMenu}
               >
-                <button className="mb-20 w-full font-bold hover:text-white  px-6 py-3 bg-yellow-500 custom rounded-lg transition-all duration-300  shadow-2xl">
+                <button className="w-full font-bold hover:text-white px-6 py-3 bg-yellow-500 custom rounded-lg transition-all duration-300 shadow-2xl text-lg md:text-xl">
                   Contact Me
                 </button>
               </Link>
             </nav>
 
-            {/* Close button for mobile */}
+            {/* Close button */}
             <button
               onClick={closeMenu}
               className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-200"
               aria-label="Close menu"
             >
-              <FiX size={24} />
+              <FiX size={28} />
             </button>
           </div>
         </div>

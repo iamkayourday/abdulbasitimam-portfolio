@@ -18,7 +18,7 @@ const DownloadButton = () => {
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative overflow-hidden text-white bg-yellow-500 custom py-3 px-6 rounded-lg flex items-center justify-center transition-all duration-300 w-[200px] h-[50px]"
+      className="relative  md:mb-20 lg:mb-0 mb-4 overflow-hidden text-white bg-yellow-500 custom py-3 px-6 rounded-lg flex items-center justify-center transition-all duration-300 w-[200px] h-[50px]"
     >
       {/* Animated White Background */}
       <span
@@ -34,7 +34,7 @@ const DownloadButton = () => {
 
       {/* Icon and Text */}
       <span
-        className={`relative z-10 flex items-center gap-2 transition-all duration-300 ${
+        className={`relative z-10 flex items-center gap-2 transition-all duration-300  ${
           isHovered ? "text-black" : "text-white"
         }`}
       >

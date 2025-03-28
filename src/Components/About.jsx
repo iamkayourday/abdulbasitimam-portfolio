@@ -4,81 +4,120 @@ import Download from './Download';
 import ThemeSwitcher from './ThemeSwitcher';
 
 const About = () => {
+  // Animation variants for consistent transitions
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 10
+      }
+    }
+  };
+
   return (
-    <div id='about' className="min-h-screen flex flex-col justify-center items-center py-16 pt-20 sm:pt-16">
-      {/* Main Section Animation on Page Load */}
+    <section id='about' className="min-h-screen flex flex-col justify-center items-center py-16 pt-20 sm:pt-16 px-4 sm:px-6 lg:px-8">
+      {/* Main Container with responsive padding */}
       <motion.div
-        className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 p-8"
-        initial={{ opacity: 0, y: 50 }} 
-        animate={{ opacity: 1, y: 0 }} 
-        transition={{ duration: 0.8 }}  
+        className="w-full max-w-[90rem] mx-auto p-4 sm:p-6 lg:p-8"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
       >
-        {/* Main Flex Container */}
-        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
+        {/* Flex Container - column on mobile, row on lg+ */}
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12 xl:gap-16">
           
-          {/* Profile Image without Animation */}
-          <div className="w-full lg:w-1/2 flex justify-center">
-            <img
-              src='portrait.png'
-              alt="Abdulbasit"
-              className="w-full h-auto rounded-lg object-cover"
-            />
+          {/* Left Column (Image + ThemeSwitcher on desktop) */}
+          <div className="w-full lg:w-1/2 flex flex-col items-center gap-8">
+            {/* Profile Image - responsive sizing */}
+            <motion.div 
+              className="w-full flex justify-center"
+              variants={itemVariants}
+            >
+              <img
+                src='portrait.webp'
+                alt="Abdulbasit Kayode Imam"
+                className="w-full max-w-md lg:max-w-full h-auto rounded-lg object-cover"
+              />
+            </motion.div>
+
+            {/* Theme Switcher - visible only on desktop under image */}
+            <motion.div 
+              className="hidden lg:block mt-20 lg:-ml-96"
+              variants={itemVariants}
+            >
+              <ThemeSwitcher />
+            </motion.div>
           </div>
 
-          {/* Introduction Section */}
-          <div className="w-full lg:w-1/2">
-            {/* Name Animation */}
+          {/* Right Column (Content) */}
+          <div className="w-full lg:w-1/2 space-y-6 sm:space-y-8">
+            {/* Name with responsive text sizing */}
             <motion.h1
-              className="lg:text-6xl md:text-4xl text-4xl font-extrabold text-[#e8c826] mb-4 text-center lg:text-left"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#e8c826] mb-2 sm:mb-4 text-center lg:text-left"
+              variants={itemVariants}
             >
-              Abdulbasit <br /><span className='md:ml-20'>Kayode Imam</span> 
+              <span className="block">Abdulbasit</span>
+              <span className="block lg:ml-12 xl:ml-20 mt-2 sm:mt-3">Kayode Imam</span> 
             </motion.h1>
 
-            {/* Subtitle Animation */}
+            {/* Subtitle with responsive sizing */}
             <motion.h2
-              className="font-medium mb-6 sm:text-center lg:text-left mt-10 md:text-4xl text-2xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
+              className="font-medium text-2xl sm:text-3xl md:text-4xl text-center lg:text-left mt-6 sm:mt-10"
+              variants={itemVariants}
             >
               Web Developer
             </motion.h2>
 
-            {/* Description Paragraph Animation */}
+            {/* Description with responsive text sizing */}
             <motion.p
-              className="text-lg leading-relaxed mb-8"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              className="text-base sm:text-lg leading-relaxed sm:leading-loose mb-6 sm:mb-8"
+              variants={itemVariants}
             >
               I'm a passionate web developer from Nigeria, focused on creating beautiful, functional, and user-friendly websites. I have experience in frontend technologies like React, HTML, CSS, and JavaScript. I enjoy crafting seamless web experiences and always strive to make the web a more accessible place for everyone.
             </motion.p>
 
-            {/* Button Container with proper spacing */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-10 md:gap-[28rem]">
-              {/* Theme Switcher - Left side */}
-              <div className="order-2 sm:order-1">
-                <ThemeSwitcher />
-              </div>
-
-              {/* Download Button - Right side with spacing */}
+            {/* Button Container - responsive layout */}
+            <motion.div
+              className="flex flex-col items-center sm:items-center lg:items-start justify-center lg:justify-start gap-4 sm:gap-6"
+              variants={itemVariants}
+            >
+              {/* Download Button with hover animations */}
               <motion.div
                 initial={{ scale: 1 }}
-                whileHover={{ scale: 0.95 }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ duration: 0.2 }}
-                className="order-1 sm:order-2 ml-0 sm:ml-6"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400 }}
               >
                 <Download />
               </motion.div>
-            </div>
+
+              {/* Theme Switcher - Visible on mobile & tablet, hidden on desktop */}
+              <motion.div 
+                className="block lg:hidden"
+                variants={itemVariants}
+              >
+                <ThemeSwitcher />
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </motion.div>
-    </div>
+    </section>
   );
 };
 

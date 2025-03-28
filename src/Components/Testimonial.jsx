@@ -7,7 +7,7 @@ const Testimonials = () => {
       id: 1,
       rating: 3,
       text: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
-      image: "/man.png",
+      image: "/man.webp",
       name: "Kwame Joseph",
       role: "Chef",
     },
@@ -15,7 +15,7 @@ const Testimonials = () => {
       id: 2,
       rating: 4,
       text: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
-      image: "/man.png",
+      image: "/man.webp",
       name: "Richard Mills",
       role: "Nutritionist",
     },
@@ -23,7 +23,7 @@ const Testimonials = () => {
       id: 3,
       rating: 5,
       text: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
-      image: "/man.png",
+      image: "/woman.webp",
       name: "Regina Miles",
       role: "Food Blogger",
     },
@@ -31,7 +31,7 @@ const Testimonials = () => {
       id: 4,
       rating: 4,
       text: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
-      image: "/man.png",
+      image: "/man.webp",
       name: "Michael Brown",
       role: "Restaurant Owner",
     },
@@ -100,7 +100,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="w-[300px] bg-[#111319] shadow-lg rounded-lg p-10 flex-shrink-0 snap-center"
+              className="w-[300px] bg-[#1a1f2b] dark:bg-gray-300 shadow-lg rounded-lg p-10 flex-shrink-0 snap-center"
             >
               {/* Star Rating */}
               <div className="flex space-x-1">
