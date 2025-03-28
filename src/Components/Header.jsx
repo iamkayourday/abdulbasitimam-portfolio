@@ -1,117 +1,218 @@
-import { useState, useEffect } from "react";
+// components/Header.jsx
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
+import { FiMenu, FiX } from "react-icons/fi";
+import { motion } from "framer-motion";
+import Mode from "./Mode";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const [scrolled, setScrolled] = useState(false);
+  const mobileMenuRef = useRef(null);
+  const menuButtonRef = useRef(null);
+
+  // Scroll handler
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Click outside handler
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isOpen &&
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target) &&
+        menuButtonRef.current &&
+        !menuButtonRef.current.contains(event.target)
+      ) {
+        closeMenu();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleMenuItemClick = () => {
-    setIsOpen(false); // Close menu after clicking an item
+  const closeMenu = () => {
+    setIsOpen(false);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = [
-        "about",
-        "skills",
-        "timeline",
-        "services",
-        "projects",
-        "testimonial",
-        "contact",
-      ];
-      let currentSection = "";
-      
-      sections.forEach((section) => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            currentSection = section;
-          }
-        }
-      });
-
-      setActiveSection(currentSection);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const navItems = [
+    { to: "about", text: "About Me" },
+    { to: "skills", text: "Skills" },
+    { to: "timeline", text: "Timeline" },
+    { to: "services", text: "Services" },
+    { to: "projects", text: "Projects" },
+    { to: "testimonial", text: "Testimonials" },
+  ];
 
   return (
-    <header className="fixed top-0 left-0 w-full backdrop-blur-md border-b border-white/10 shadow-md z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-24">
-        {/* Logo */}
-        <div className="text-2xl font-bold text-white">Abdulbasit</div>
-
-        {/* Menu Button (Mobile) */}
-        <button
-          className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white lg:hidden"
-          onClick={toggleMenu}
-          aria-label="Toggle Menu"
-        >
-          <svg
-            className={`h-6 w-6 transition-transform duration-300 ${
-              isOpen ? "rotate-90" : ""
-            }`}
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+    <>
+      {/* Main Header */}
+      <header
+        className={`fixed top-0 left-0 w-full backdrop-blur-md z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-black/50 border-b border-white/10 shadow-lg"
+            : "bg-black/80"
+        } ${isOpen ? "opacity-0 pointer-events-none" : ""}`}
+      >
+        <div className="max-w-7xl mx-auto px-5 flex justify-between items-center h-16 md:h-20">
+          {/* Logo */}
+          <Link
+            to="about"
+            smooth={true}
+            duration={500}
+            offset={-70}
+            className="group cursor-pointer transition-all duration-300"
+            onClick={closeMenu}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d={
-                isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
-              }
-            />
-          </svg>
-        </button>
+            <div className="logo text-2xl custom-text md:text-4xl font-bold text-white group-hover:text-yellow-500 transition-colors duration-300">
+              Abdulbasit
+            </div>
+          </Link>
 
-        {/* Navigation Menu */}
-        <nav
-          className={`fixed inset-x-0 top-0 bg-black bg-opacity-80 text-white flex flex-col items-center justify-center gap-8 transition-transform transform ease-in-out duration-300 lg:static lg:flex-row lg:bg-transparent lg:translate-y-0 lg:text-black lg:gap-6 ${
-            isOpen ? "translate-y-24" : "-translate-y-full lg:translate-y-0"
+          {/* Desktop Navigation with Mode toggle */}
+          <nav className="hidden lg:flex items-center space-x-6">
+            {navItems.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="relative text-white/90 hover:text-white cursor-pointer transition-colors duration-300 py-1 px-3 text-sm uppercase tracking-wider group"
+                activeClass="text-yellow-500 custom-text"
+                spy={true}
+              >
+                {item.text}
+                <span className="absolute left-1/2 -bottom-1 w-0 h-0.5 bg-yellow-500 custom transition-all duration-300 transform -translate-x-1/2 group-hover:w-4/5"></span>
+              </Link>
+            ))}
+
+            <div className="ml-4 flex items-center gap-4">
+              <Link to="contact" smooth={true} duration={500} offset={-70}>
+                <button className="bg-yellow-500 custom text-black font-bold px-5 py-2 rounded-lg transition-all duration-300 text-sm shadow-lg hover:text-white">
+                  Contact Me
+                </button>
+              </Link>
+              <div className="bg-white/40 p-2 rounded-full md:block hidden">
+                <Mode />
+              </div>
+            </div>
+          </nav>
+
+          {/* Mobile Controls */}
+          <div className="flex lg:hidden items-center gap-4">
+            <div className="md:hidden block">
+              <Mode />
+            </div>
+            <button
+              ref={menuButtonRef}
+              className="text-white text-2xl z-50 transition-all duration-200 hover:scale-110 focus:outline-none"
+              onClick={toggleMenu}
+              aria-label={isOpen ? "Close Menu" : "Open Menu"}
+            >
+              {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 z-50 overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+      >
+        <div
+          ref={mobileMenuRef}
+          className={`absolute top-0 left-0 w-full bg-black/95 backdrop-blur-sm flex flex-col items-center pt-2 transition-transform duration-300 ease-in-out ${
+            isOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >
-          {[
-            { to: "about", label: "ABOUT ME" },
-            { to: "skills", label: "SKILLS" },
-            { to: "timeline", label: "TIMELINE" },
-            { to: "services", label: "SERVICES" },
-            { to: "projects", label: "PROJECTS" },
-            { to: "testimonial", label: "TESTIMONIALS" },
-            { to: "contact", label: "CONTACT ME" },
-          ].map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className={`cursor-pointer text-2xl lg:text-base relative transition-colors text-white hover:text-yellow-500 ${
-                activeSection === item.to ? "text-yellow-500 font-semibold" : ""
-              }`}
-              smooth={true}
-              duration={500}
-              offset={-70}
-              onClick={handleMenuItemClick}
+          {/* Menu Content */}
+          <div className="relative bg-gradient-to-br from-black to-gray-900 border border-yellow-500/20 rounded-xl p-8 w-full max-w-sm mx-4 shadow-2xl shadow-gray-300/10">
+            <nav className="flex flex-col items-center space-y-5">
+              <Link
+                to="about"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="group cursor-pointer transition-all duration-300 mb-10"
+                onClick={closeMenu}
+              >
+                <div className="text-2xl font-bold text-white transition-colors duration-300">
+                  Abdulbasit
+                </div>
+              </Link>
+
+              {navItems.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  smooth={true}
+                  duration={500}
+                  offset={-70}
+                  className="relative w-full text-center text-white/90 hover:text-white cursor-pointer transition-colors duration-300 py-2 text-2xl group"
+                  onClick={closeMenu}
+                  activeClass="custom-text text-yellow-500 font-medium"
+                  spy={true}
+                >
+                  {item.text}
+                  <span className="absolute left-1/2 -bottom-1 w-0 h-0.5 bg-yellow-500 custom transition-all duration-300 transform -translate-x-1/2 group-hover:w-4/5"></span>
+                </Link>
+              ))}
+
+              {/* Dark Mode Toggle in Mobile Menu */}
+              {/* <div className="mt-6 w-full flex justify-center">
+                <div className="bg-white/10 p-3 rounded-lg">
+                  <Mode />
+                </div>
+              </div> */}
+
+              <Link
+                to="contact"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="w-full mt-6"
+                onClick={closeMenu}
+              >
+                <button className="mb-20 w-full font-bold hover:text-white  px-6 py-3 bg-yellow-500 custom rounded-lg transition-all duration-300  shadow-2xl">
+                  Contact Me
+                </button>
+              </Link>
+            </nav>
+
+            {/* Close button for mobile */}
+            <button
+              onClick={closeMenu}
+              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-200"
+              aria-label="Close menu"
             >
-              {item.label}
-              <span
-                className={`absolute left-0 -bottom-1 w-full h-0.5 bg-yellow-500 transition-all duration-300 scale-x-0 origin-left hover:scale-x-100 ${
-                  activeSection === item.to ? "scale-x-100" : ""
-                }`}
-              ></span>
-            </Link>
-          ))}
-        </nav>
+              <FiX size={24} />
+            </button>
+          </div>
+        </div>
       </div>
-    </header>
+    </>
   );
 };
 
