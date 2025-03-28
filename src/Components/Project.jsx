@@ -7,14 +7,14 @@ const Projects = () => {
     {
       title: "Abdulbasit Portfolio",
       description: "Creation 'from scratch' of my portfolio.",
-      imageUrl: "abdulbasitimam-desktop.jpg",
+      imageUrl: "abdulbasitimam-desktop.avif",
       link: "https://abdulbasitimam.vercel.app/",
       technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"]
     },
     {
       title: "YumFind",
       description: "YumFind is your recipe-sharing web application that helps users discover, save, and manage their favorite recipes.",
-      imageUrl: "yum-find-desktop.jpg",
+      imageUrl: "yum-find-desktop.avif",
       link: "https://yum-find.vercel.app/",
             technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"]
 
@@ -22,7 +22,7 @@ const Projects = () => {
     {
       title: "Hair by May",
       description: "Redesign of the entire front part of Hair by May website with a primary focus on mobile optimization.",
-      imageUrl: "hairbymay-desktop.jpg",
+      imageUrl: "hairbymay-desktop.avif",
       link: "https://hairbymay.vercel.app/",
             technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"]
 
@@ -30,21 +30,21 @@ const Projects = () => {
     {
       title: "Kulinary Kompass",
       description: "Kulinary Kompass is a culinary guide designed to empower young adults, especially those in care, to gain confidence in the kitchen while staying on budget.",
-      imageUrl: "Kulinary-Kompass.png",
+      imageUrl: "Kulinary-Kompass.avif",
       link: "https://kulinarykompass.co.uk/",
       technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"]
     },
     {
       title: "Maid In Castle",
       description: "Maid in Castle is a professional cleaning service dedicated to creating healthier, happier homes through top-quality and eco-friendly cleaning solutions.",
-      imageUrl: "Maid-in-castle.png",
+      imageUrl: "Maid-in-castle.avif",
       link: "https://maidincastle.vercel.app/",
       technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"]
     },
     {
       title: "African Market",
       description: "An e-commerce platform designed to connect local vendors with customers, showcasing a variety of African products and services.",
-      imageUrl: "wix.jpg",
+      imageUrl: "wix.avif",
       link: "https://abdulbasitkayode1.wixsite.com/african-marketplace?page=3",
       technologies: ["Wix"]
     },

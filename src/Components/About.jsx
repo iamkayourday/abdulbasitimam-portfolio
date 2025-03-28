@@ -30,7 +30,10 @@ const About = () => {
   };
 
   return (
-    <section id='about' className="min-h-screen flex flex-col justify-center items-center py-16 pt-20 sm:pt-16 px-4 sm:px-6 lg:px-8">
+    <section
+      id="about"
+      className="min-h-screen flex flex-col justify-center items-center py-16 pt-20 sm:pt-16 px-4 sm:px-6 lg:px-8"
+    >
       {/* Main Container with responsive padding */}
       <motion.div
         className="w-full max-w-[90rem] mx-auto p-4 sm:p-6 lg:p-8"
@@ -40,23 +43,25 @@ const About = () => {
       >
         {/* Flex Container - column on mobile, row on lg+ */}
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12 xl:gap-16">
-          
           {/* Left Column (Image + ThemeSwitcher on desktop) */}
           <div className="w-full lg:w-1/2 flex flex-col items-center gap-8">
             {/* Profile Image - responsive sizing */}
-            <motion.div 
+            <motion.div
               className="w-full flex justify-center"
               variants={itemVariants}
             >
               <img
-                src='portrait.webp'
+                src="portrait.webp"
                 alt="Abdulbasit Kayode Imam"
-                className="w-full max-w-md lg:max-w-full h-auto rounded-lg object-cover"
+                className="w-full  h-auto rounded-lg object-cover"
+                loading="lazy"
+                width={500}
+                height={500}
               />
             </motion.div>
 
             {/* Theme Switcher - visible only on desktop under image */}
-            <motion.div 
+            <motion.div
               className="hidden lg:block mt-20 lg:-ml-96"
               variants={itemVariants}
             >
@@ -72,7 +77,9 @@ const About = () => {
               variants={itemVariants}
             >
               <span className="block">Abdulbasit</span>
-              <span className="block lg:ml-12 xl:ml-20 mt-2 sm:mt-3">Kayode Imam</span> 
+              <span className="block lg:ml-12 xl:ml-20 mt-2 sm:mt-3">
+                Kayode Imam
+              </span>
             </motion.h1>
 
             {/* Subtitle with responsive sizing */}
@@ -88,7 +95,11 @@ const About = () => {
               className="text-base sm:text-lg leading-relaxed sm:leading-loose mb-6 sm:mb-8"
               variants={itemVariants}
             >
-              I'm a passionate web developer from Nigeria, focused on creating beautiful, functional, and user-friendly websites. I have experience in frontend technologies like React, HTML, CSS, and JavaScript. I enjoy crafting seamless web experiences and always strive to make the web a more accessible place for everyone.
+              I'm a passionate web developer from Nigeria, focused on creating
+              beautiful, functional, and user-friendly websites. I have
+              experience in frontend technologies like React, HTML, CSS, and
+              JavaScript. I enjoy crafting seamless web experiences and always
+              strive to make the web a more accessible place for everyone.
             </motion.p>
 
             {/* Button Container - responsive layout */}
@@ -107,10 +118,7 @@ const About = () => {
               </motion.div>
 
               {/* Theme Switcher - Visible on mobile & tablet, hidden on desktop */}
-              <motion.div 
-                className="block lg:hidden"
-                variants={itemVariants}
-              >
+              <motion.div className="block lg:hidden" variants={itemVariants}>
                 <ThemeSwitcher />
               </motion.div>
             </motion.div>
