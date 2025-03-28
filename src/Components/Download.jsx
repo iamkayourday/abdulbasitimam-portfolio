@@ -18,7 +18,7 @@ const DownloadButton = () => {
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative overflow-hidden text-white bg-yellow-500 hover:bg-yellow-600 py-3 px-6 rounded-lg flex items-center justify-center transition-all duration-300 w-[200px] h-[50px]"
+      className="relative overflow-hidden text-white bg-yellow-500 custom py-3 px-6 rounded-lg flex items-center justify-center transition-all duration-300 w-[200px] h-[50px]"
     >
       {/* Animated White Background */}
       <span
