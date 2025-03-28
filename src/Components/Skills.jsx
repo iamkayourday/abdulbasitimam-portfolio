@@ -146,7 +146,7 @@ const SkillCard = ({ skill, index, onClick }) => {
       </motion.div>
 
       {/* Skill name */}
-      <div className="mt-2 text-sm font-semibold text-gray-400 text-nowrap mb-5">
+      <div className="mt-2 text-sm font-semibold  text-nowrap mb-5">
         {skill.name}
       </div>
     </div>
@@ -171,13 +171,13 @@ const Skills = () => {
         <h2 className="text-4xl font-semibold text-yellow-500 mb-4 mt-20">
           Skills Overview
         </h2>
-        <p className="text-lg text-white">
+        <p className="text-lg ">
         In this section, you can explore the key skills I’ve acquired as a frontend developer. These are the core technologies and tools I use to build responsive, dynamic, and interactive web applications.
         </p>
       </div>
 
       {/* Label above skills grid */}
-      <div className="text-center text-white mb-4">
+      <div className="text-center  mb-4">
         <p>
           Hover over a skill to see proficiency level. Click to see details.
         </p>
@@ -187,9 +187,9 @@ const Skills = () => {
         {/* Description Section */}
         <div className="w-full md:w-2/3 top-4 h-fit mb-10">
           {selectedSkill ? (
-            <div className="border border-yellow-500 p-6 pl-0 pt-0 rounded-lg shadow-md flex items-start space-x-4">
+            <div className="border border-yellow-500 custom-border p-6 pl-0 pt-0 rounded-lg shadow-md flex items-start space-x-4">
               {/* Vertical stars at the left edge */}
-              <div className="flex flex-col space-y-1 bg-yellow-500 p-3 rounded-tl-lg rounded-br-2xl py-8">
+              <div className="flex flex-col space-y-1 bg-yellow-500 custom p-3 rounded-tl-lg rounded-br-2xl py-8">
                 {[...Array(5)].map((_, i) => (
                   <svg
                     key={i}
@@ -213,10 +213,10 @@ const Skills = () => {
 
                 {/* Text below the icon */}
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-300 mb-4">
+                  <h3 className="text-2xl font-bold  mb-4">
                     {selectedSkill.name}
                   </h3>
-                  <p className="text-lg text-gray-400">
+                  <p className="text-lg ">
                     {selectedSkill.description}
                   </p>
                 </div>
