@@ -11,32 +11,32 @@ import {
 const Services = () => {
   const services = [
     {
-      icon: <FaCode className="text-4xl text-yellow-500 mb-4" />,
+      icon: <FaCode className="text-4xl text-yellow-500 mb-4 custom-text" />,
       title: "Responsive Web Design",
       description: "Create websites that look great on all devices, from desktops to mobiles.",
     },
     {
-      icon: <FaMobileAlt className="text-4xl text-yellow-500 mb-4" />,
+      icon: <FaMobileAlt className="text-4xl text-yellow-500 mb-4 custom-text" />,
       title: "Interactive Web Apps",
       description: "Build dynamic, user-friendly web applications with modern frameworks.",
     },
     {
-      icon: <FaPlug className="text-4xl text-yellow-500 mb-4" />,
+      icon: <FaPlug className="text-4xl text-yellow-500 mb-4 custom-text" />,
       title: "API Integration",
       description: "Connect web applications with external services and APIs for enhanced functionality.",
     },
     {
-      icon: <FaCodeBranch className="text-4xl text-yellow-500 mb-4" />,
+      icon: <FaCodeBranch className="text-4xl text-yellow-500 mb-4 custom-text" />,
       title: "Version Control & Collaboration",
       description: "Manage codebases with tools like Git and GitHub, ensuring seamless team collaboration.",
     },
     {
-      icon: <FaGlobe className="text-4xl text-yellow-500 mb-4" />,
+      icon: <FaGlobe className="text-4xl text-yellow-500 mb-4 custom-text" />,
       title: "Cross-Browser Compatibility",
       description: "Ensure websites look and perform consistently across all major browsers.",
     },
     {
-      icon: <FaRocket className="text-4xl text-yellow-500 mb-4" />,
+      icon: <FaRocket className="text-4xl text-yellow-500 mb-4 custom-text" />,
       title: "Web Optimization",
       description: "Ensure websites load quickly, are SEO-friendly, and perform well across devices.",
     },
@@ -72,7 +72,7 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-4">
         <header className="text-center mb-16">
           <h2 className="text-4xl font-bold text-yellow-500">Services</h2>
-          <p className="mt-4 text-lg text-gray-400">
+          <p className="mt-4 text-lg ">
             What I bring to the table as a frontend developer.
           </p>
         </header>
@@ -89,8 +89,8 @@ const Services = () => {
                 className="p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 min-w-[280px]"
               >
                 {service.icon}
-                <h3 className="text-xl font-semibold mb-2 text-white">{service.title}</h3>
-                <p className="text-gray-400">{service.description}</p>
+                <h3 className="md:text-xl text-base font-semibold mb-2 text-nowrap">{service.title}</h3>
+                <p className="">{service.description}</p>
               </div>
             ))}
           </div>
@@ -104,8 +104,8 @@ const Services = () => {
               className="p-6 rounded-lg shadow-xl hover:shadow-xl transition-shadow duration-300"
             >
               {service.icon}
-              <h3 className="text-xl font-semibold mb-2 text-white">{service.title}</h3>
-              <p className="text-gray-400">{service.description}</p>
+              <h3 className="md:text-xl text-lg font-semibold mb-2 text-nowrap">{service.title}</h3>
+              <p className="">{service.description}</p>
             </div>
           ))}
         </div>

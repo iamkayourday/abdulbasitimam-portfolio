@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 
-// Sample data for certificates with organization logos
 const certificates = [
   {
     title: "HTML, CSS and JavaScript for Web Developers",
@@ -10,7 +9,7 @@ const certificates = [
     logo: "logo2.png",
   },
   {
-    title: "HTML5 & CSS Complete course: Build website like a pro",
+    title: "HTML5 & CSS Complete Course: Build Websites Like a Pro",
     date: "June 2024",
     description:
       "Learned professional techniques for building modern, responsive websites using HTML5 and CSS3, with a focus on best practices and design principles.",
@@ -23,6 +22,7 @@ const certificates = [
       "Completed an in-depth course on front-end web development, mastering tools and frameworks like HTML, CSS, JavaScript, React, and more!",
     logo: "Logo1.jpg",
   },
+  
 ];
 
 const Timeline = () => {
@@ -45,22 +45,23 @@ const Timeline = () => {
   }, []);
 
   return (
-    <section ref={timelineRef} id="timeline" className="py-20 px-4 sm:px-6 mt-20">
-      {/* Header and Introduction */}
+    <section ref={timelineRef} id="timeline" className="py-20 px-6 sm:px-12 relative ">
+      {/* Header */}
       <header className="text-center mb-16">
-        <h1 className="text-3xl sm:text-4xl font-bold text-yellow-500">Timeline</h1>
-        <p className="mt-12 text-base sm:text-lg text-gray-200 max-w-2xl mx-auto">
-          Explore my journey, including certifications, academic training, and
-          professional experiences, showcasing my growth in frontend development.
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-yellow-400 drop-shadow-md">
+          My Journey
+        </h1>
+        <p className="mt-6 text-lg sm:text-xl max-w-3xl mx-auto ">
+          Explore my certifications, academic achievements, and professional experiences in frontend development.
         </p>
       </header>
 
       <div className="max-w-screen-lg mx-auto flex">
-        {/* Progress Bar Container */}
-        <div className="relative w-1 bg-gray-300">
-          {/* Scroll Progress Indicator */}
+        {/* Progress Bar */}
+        <div className="relative w-1 bg-gray-700 rounded-lg">
+          {/* Scroll Indicator */}
           <div
-            className="absolute left-0 top-0 w-full bg-gradient-to-b from-yellow-400 to-gray-700 rounded"
+            className="absolute left-0 top-0 w-full bg-yellow-400 custom rounded-lg"
             style={{
               height: `${scrollProgress}%`,
               transition: "height 0.2s ease-in-out",
@@ -73,7 +74,7 @@ const Timeline = () => {
             return (
               <div
                 key={index}
-                className="absolute left-[-9px] w-6 h-6 border-4 border-gray-400 bg-white rounded-full"
+                className="absolute left-[-10px] w-6 h-6 border-4 border-gray-500 bg-black rounded-full shadow-md"
                 style={{ top: `${position}%`, transform: "translateY(-50%)" }}
               ></div>
             );
@@ -81,7 +82,7 @@ const Timeline = () => {
         </div>
 
         {/* Timeline Content */}
-        <div className="ml-6 sm:ml-10 md:ml-16 flex-1 space-y-12 sm:space-y-16">
+        <div className="ml-8 sm:ml-14 flex-1 space-y-12 sm:space-y-16">
           {certificates.map((cert, index) => (
             <div
               key={index}
@@ -90,17 +91,17 @@ const Timeline = () => {
                 animation: `fadeUp 0.8s ease-out ${index * 0.3}s forwards`,
               }}
             >
-              {/* Title and Date */}
-              <h3 className="text-xl font-semibold text-yellow-500">{cert.title}</h3>
-              <p className="text-sm text-gray-400 mb-4 sm:mb-6">{cert.date}</p>
-              <p className="text-base text-gray-200 mb-8 sm:mb-12">{cert.description}</p>
+              {/* Title & Date */}
+              <h3 className="text-2xl font-bold text-yellow-400">{cert.title}</h3>
+              <p className="text-lg mb-4 font-semibold ">{cert.date}</p>
+              <p className="text-base  mb-8">{cert.description}</p>
 
-              {/* Organization Logo */}
-              <div className="w-full sm:w-[350px] p-6 sm:p-8 border-2 border-yellow-500 rounded-lg shadow-lg">
+              {/* Certificate Image */}
+              <div className="w-full sm:w-[350px] p-6 sm:p-8 border border-yellow-500 custom-border rounded-lg shadow-xl bg-white bg-opacity-10 backdrop-blur-lg transform transition hover:scale-105 hover:animate-pulse">
                 <img
                   src={cert.logo}
                   alt={`${cert.title} logo`}
-                  className="w-full h-32 sm:h-40 object-cover rounded-lg"
+                  className="w-full h-32 sm:h-40 object-cover rounded-lg shadow-md"
                 />
               </div>
             </div>
@@ -108,7 +109,7 @@ const Timeline = () => {
         </div>
       </div>
 
-      {/* Animation Keyframes */}
+      {/* Custom Styles */}
       <style>
         {`
           @keyframes fadeUp {

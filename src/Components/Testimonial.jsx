@@ -38,13 +38,13 @@ const Testimonials = () => {
   ];
 
   return (
-    <div id="testimonials" className="py-12 px-4 md:px-8 lg:px-16 mt-40 ">
+    <div id="testimonial" className="py-12 px-4 md:px-8 lg:px-16 mt-[8rem] ">
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-yellow-500 mb-4">
           What People Are Saying
         </h2>
-        <p className="text-center text-white mb-8">
+        <p className="text-center  mb-8">
           Here's what some of our users have to say about the project and their
           experience.
         </p>
@@ -75,7 +75,7 @@ const Testimonials = () => {
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-gray-200 text-center">{testimonial.text}</p>
+              <p className=" text-center">{testimonial.text}</p>
 
               {/* Customer Image, Name, and Role */}
               <div className="flex items-center space-x-4">
@@ -85,10 +85,10 @@ const Testimonials = () => {
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
-                  <p className="font-semibold text-yellow-500">
+                  <p className="font-semibold text-yellow-500 custom-text">
                     {testimonial.name}
                   </p>
-                  <p className="text-sm text-gray-400">{testimonial.role}</p>
+                  <p className="text-sm">{testimonial.role}</p>
                 </div>
               </div>
             </div>
@@ -121,7 +121,7 @@ const Testimonials = () => {
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-gray-200 mt-2 text-gray-200">
+              <p className=" mt-2">
                 {testimonial.text}
               </p>
 
@@ -136,7 +136,7 @@ const Testimonials = () => {
                   <p className="font-semibold text-yellow-500">
                     {testimonial.name}
                   </p>
-                  <p className="text-sm text-gray-400">{testimonial.role}</p>
+                  <p className="text-sm">{testimonial.role}</p>
                 </div>
               </div>
             </div>
