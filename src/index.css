@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 
 @tailwind base;
 @tailwind components;
@@ -7,21 +10,36 @@
 
 html {
   scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f0f0f0;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: yellow;
+    border-radius: 6px;
+  }
   
+}
+.logo{
+  font-family: 'Orbitron';
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'lato','Poppins', sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
-    background-color: #101920;
-    /* overflow-y: hidden; */
+    /* background-color: #101920; */
   }
+
+  
+
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
   .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
   }
   .custom-bg2 {
     background-color: rgba(0, 0, 0, 0.25);
@@ -32,14 +50,9 @@ body {
 
   ::selection {
     background-color: #000;
-    color: #eab308; /* Optional: Adjust the text color for better contrast */
+    color: #eab308; 
   }
-  
-/* Dark Mode Styles */
-body.dark {
-  background-color: #11141d; /* Dark background */
-  color: #E0E0E0; /* Light text for dark mode */
-}
+ 
 
   @keyframes fadeUp {
     0% {
@@ -57,4 +70,332 @@ body.dark {
     right: 20px;
     z-index: 1000;
   }
+
+
+
+.green {
+  --bg-primary: #606c38; 
+  --text-primary: #fff7ed; 
+  h1, h2, h3, h4, h5, h6 {
+    color: #606c38;
+  }
+  .custom-border {
+    border: 1px solid #606c38;
+  }
+  .custom {
+    background-color: #606c38;
+    color: black;
+    ::selection {
+      background-color: white;
+      color: #606c38; 
+    }
+  }
   
+  
+  .custom-text{
+    color: #606c38;
+  }
+  .button-text{
+    color: white;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: black;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #606c38;
+    border-radius: 2px;
+  }
+  ::selection {
+    background-color: #606c38;
+    color: white; 
+  }
+
+}
+
+
+
+
+/* PURPLE */
+.purple {
+  --bg-primary: #6d36cc; /* orange-600 */
+  --text-primary: #fff7ed; /* orange-50 */
+  h1, h2, h3, h4, h5, h6 {
+    color: #6d36cc;
+  }
+  .custom-border {
+    border: 1px solid #6d36cc;
+  }
+  .custom {
+    background-color: #6d36cc;
+    color: black;
+    ::selection {
+      background-color: white;
+      color: #6d36cc; 
+    }
+  }
+  .custom-text{
+    color: #6d36cc;
+  }
+  .button-text{
+    color: white;
+  }
+  .custom-text:hover{
+    color: #6d36cc;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: black;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #6d36cc;
+    border-radius: 2px;
+  }
+  ::selection {
+    background-color: #6d36cc;
+    color: white; 
+  }
+
+}
+
+/* ORANGE */
+.orange {
+  --bg-primary: #e36414; /* orange-600 */
+  --text-primary: #fff7ed; /* orange-50 */
+  h1, h2, h3, h4, h5, h6 {
+    color: #e36414;
+  }
+  .custom-border {
+    border: 1px solid #e36414;
+  }
+  .custom {
+    background-color: #e36414;
+    color: black;
+    ::selection {
+      background-color: white;
+      color: #e36414; 
+    }
+  }
+  .custom-text{
+    color: #e36414;
+  }
+  .button-text{
+    color: white;
+  }
+  .custom-text:hover{
+    color: #e36414;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: black;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #e36414;
+    border-radius: 2px;
+  }
+  ::selection {
+    background-color: #e36414;
+    color: white; 
+  }
+
+}
+
+/* RED */
+.red {
+  --bg-primary: #990210; /* orange-600 */
+  --text-primary: #fff7ed; /* orange-50 */
+  h1, h2, h3, h4, h5, h6 {
+    color: #990210;
+  }
+  .custom-border {
+    border: 1px solid #990210;
+  }
+  .custom {
+    background-color: #990210;
+    color: black;
+    ::selection {
+      background-color: white;
+      color: #990210; 
+    }
+  }
+  .custom-text{
+    color: #990210;
+  }
+  .button-text{
+    color: white;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: black;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #990210;
+    border-radius: 2px;
+  }
+  ::selection {
+    background-color: #990210;
+    color: white; 
+  }
+
+}
+
+/* GRAY */
+.gray {
+  --bg-primary: #808080; /* orange-600 */
+  --text-primary: #fff7ed; /* orange-50 */
+  h1, h2, h3, h4, h5, h6 {
+    color: #808080;
+  }
+  .custom-border {
+    border: 1px solid #808080;
+  }
+  .custom-border:focus {
+    border: 1px solid #808080;
+  }
+  .custom {
+    background-color: #808080;
+    color: black;
+    ::selection {
+      background-color: white;
+      color: #808080; 
+    }
+  }
+  .custom-text{
+    color: #808080;
+  }
+  .button-text{
+    color: white;
+  }
+  .custom-text:hover{
+    color: #808080;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: black;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #808080;
+    border-radius: 2px;
+  }
+  ::selection {
+    background-color: #808080;
+    color: white; 
+  }
+
+}
+
+/* PINK */
+.pink {
+  --bg-primary: #edafb8; /* orange-600 */
+  --text-primary: #fff7ed; /* orange-50 */
+  h1, h2, h3, h4, h5, h6 {
+    color: #edafb8;
+  }
+  .custom-border {
+    border: 1px solid #edafb8;
+  }
+  .custom-border:focus {
+    border: 1px solid #edafb8;
+  }
+  .custom {
+    background-color: #edafb8;
+    color: black;
+    ::selection {
+      background-color: white;
+      color: #edafb8; 
+    }
+  }
+  .custom-text{
+    color: #edafb8;
+  }
+  .button-text{
+    color: white;
+  }
+  .custom-text:hover{
+    color: #edafb8;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: black;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #edafb8;
+    border-radius: 2px;
+  }
+  ::selection {
+    background-color: #edafb8;
+    color: white; 
+  }
+
+}
+
+/* LIGHT-BLUE */
+.light-blue {
+  --bg-primary: #a2d2ff; 
+  --text-primary: #fff7ed; 
+  h1, h2, h3, h4, h5, h6 {
+    color: #a2d2ff;
+  }
+  .custom-border {
+    border: 1px solid #a2d2ff;
+  }
+  .custom-border:focus {
+    border: 1px solid #a2d2ff;
+  }
+  .custom {
+    background-color: #a2d2ff;
+    color: black;
+    ::selection {
+      background-color: white;
+      color: #a2d2ff; 
+    }
+  }
+  .custom-text{
+    color: #a2d2ff;
+  }
+  .button-text{
+    color: white;
+  }
+  .custom-text:hover{
+    color: #a2d2ff;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: black;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #a2d2ff;
+    border-radius: 2px;
+  }
+  ::selection {
+    background-color: #a2d2ff;
+    color: white; 
+  }
+
+}
+
+ 
+
+
+
+
+
+
+
+
+
