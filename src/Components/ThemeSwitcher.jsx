@@ -44,7 +44,7 @@ const ThemeSwitcher = () => {
       {/* Main Theme Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-10 h-10 mt-20 md:mt-0 rounded-full flex items-center justify-center shadow-xl transition-all duration-300 bg-yellow-500"
+        className="w-10 h-10 mt-20 md:mt-0 rounded-full flex items-center justify-center shadow-xl transition-all duration-300 bg-yellow-500 custom"
         aria-label="Change theme"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
@@ -86,7 +86,7 @@ const ThemeSwitcher = () => {
 
             {/* Desktop - Horizontal Layout */}
             <motion.div
-              className="hidden lg:flex absolute bottom-0 left-14 gap-2 bg-yellow-500 backdrop-blur-0 p-2 shadow-lg rounded-lg"
+              className="hidden lg:flex absolute bottom-0 left-14 gap-2 bg-yellow-900 custom backdrop-blur-0 p-2 shadow-lg rounded-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
