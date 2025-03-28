@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Download from './Download';
-
+import ThemeSwitcher from './ThemeSwitcher';
 
 const About = () => {
   return (
     <div id='about' className="min-h-screen flex flex-col justify-center items-center py-16 pt-20 sm:pt-16">
       {/* Main Section Animation on Page Load */}
       <motion.div
-        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 p-8"
+        className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 p-8"
         initial={{ opacity: 0, y: 50 }} 
         animate={{ opacity: 1, y: 0 }} 
         transition={{ duration: 0.8 }}  
@@ -29,7 +29,7 @@ const About = () => {
           <div className="w-full lg:w-1/2">
             {/* Name Animation */}
             <motion.h1
-              className="lg:text-6xl md:text-4xl text-4xl  font-extrabold text-[#e8c826] mb-4 text-center lg:text-left"
+              className="lg:text-6xl md:text-4xl text-4xl font-extrabold text-[#e8c826] mb-4 text-center lg:text-left"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -39,7 +39,7 @@ const About = () => {
 
             {/* Subtitle Animation */}
             <motion.h2
-              className="font-medium text-white mb-6  sm:text-center lg:text-left mt-10 md:text-4xl text-2xl"
+              className="font-medium mb-6 sm:text-center lg:text-left mt-10 md:text-4xl text-2xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
@@ -49,7 +49,7 @@ const About = () => {
 
             {/* Description Paragraph Animation */}
             <motion.p
-              className="text-lg text-white leading-relaxed mb-8"
+              className="text-lg leading-relaxed mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -57,13 +57,20 @@ const About = () => {
               I'm a passionate web developer from Nigeria, focused on creating beautiful, functional, and user-friendly websites. I have experience in frontend technologies like React, HTML, CSS, and JavaScript. I enjoy crafting seamless web experiences and always strive to make the web a more accessible place for everyone.
             </motion.p>
 
-            {/* Download Button with Animation */}
-            <div className="flex justify-center lg:justify-end">
+            {/* Button Container with proper spacing */}
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-10 md:gap-[28rem]">
+              {/* Theme Switcher - Left side */}
+              <div className="order-2 sm:order-1">
+                <ThemeSwitcher />
+              </div>
+
+              {/* Download Button - Right side with spacing */}
               <motion.div
                 initial={{ scale: 1 }}
-                whileHover={{ scale: 0.95 }} // Slight shrink on hover
-                whileTap={{ scale: 0.9 }} // Shrink further on click
+                whileHover={{ scale: 0.95 }}
+                whileTap={{ scale: 0.9 }}
                 transition={{ duration: 0.2 }}
+                className="order-1 sm:order-2 ml-0 sm:ml-6"
               >
                 <Download />
               </motion.div>
@@ -71,7 +78,6 @@ const About = () => {
           </div>
         </div>
       </motion.div>
- 
     </div>
   );
 };
