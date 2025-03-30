@@ -44,11 +44,11 @@ const ProjectCard = ({ projectData }) => {
         <p className="text-sm">{projectData.description}</p>
 
         {/* Technologies */}
-        <div className="mt-4 flex flex-wrap gap-2 text-white">
+        <div className="mt-4 flex flex-wrap gap-2 ">
           {projectData.technologies.map((tech, index) => (
             <span
               key={index}
-              className="glass-effect bg-yellow-600 custom text-sm font-semibold py-1 px-4 rounded-full text-white button-text"
+              className=" bg-yellow-500 custom text-sm font-semibold py-1 px-4 rounded-full button-text"
             >
               {tech}
             </span>
@@ -59,7 +59,7 @@ const ProjectCard = ({ projectData }) => {
         <div className="mt-4 flex justify-end">
           <button
             onClick={() => !projectData.disabled && window.open(projectData.link, "_blank")}
-            className={`flex items-center gap-2 custom font-semibold py-2 px-4 rounded-full ${
+            className={`flex items-center gap-2 custom font-semibold py-2 px-4 rounded-full text-white ${
               projectData.disabled 
                 ? 'bg-gray-400/80 cursor-not-allowed glass-effect-secondary' 
                 : 'bg-yellow-600'
