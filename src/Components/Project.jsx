@@ -6,14 +6,14 @@ const Projects = () => {
   const myprojects = [
     {
       title: "Abdulbasit Portfolio",
-      description: "Creation 'from scratch' of my portfolio.",
+      description: "Designed and built my personal portfolio website from scratch to showcase my skills, projects, and expertise as a frontend developer.",
       imageUrl: "abdulbasitimam-desktop.avif",
       link: "https://abdulbasitimam.vercel.app/",
       technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"]
     },
     {
       title: "YumFind",
-      description: "YumFind is your recipe-sharing web application that helps users discover, save, and manage their favorite recipes.",
+      description: "A recipe-sharing web application that enables users to discover, save, and manage their favorite recipes, with a focus on seamless user experience and responsive design.",
       imageUrl: "yum-find-desktop.avif",
       link: "https://yum-find.vercel.app/",
             technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"]
@@ -21,7 +21,7 @@ const Projects = () => {
     },
     {
       title: "Hair by May",
-      description: "Redesign of the entire front part of Hair by May website with a primary focus on mobile optimization.",
+      description: "Redesigned a mobile-first booking website with an intuitive and responsive interface, connected to Acuity Scheduler for effortless appointment scheduling and enhanced user experience.",
       imageUrl: "hairbymay-desktop.avif",
       link: "https://hairbymay.vercel.app/",
             technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"]
@@ -43,11 +43,26 @@ const Projects = () => {
     },
     {
       title: "African Market",
-      description: "An e-commerce platform designed to connect local vendors with customers, showcasing a variety of African products and services.",
+      description: "An e-commerce platform to connect local vendors with customers, showcasing a wide variety of African products and services in a visually engaging manner.",
       imageUrl: "wix.avif",
       link: "https://abdulbasitkayode1.wixsite.com/african-marketplace?page=3",
       technologies: ["Wix"]
     },
+    // {
+    //   title: "Detty Vip",
+    //   description: "An e-commerce platform to connect local vendors with customers, showcasing a wide variety of African products and services in a visually engaging manner.",
+    //   imageUrl: "wix.avif",
+    //   link: "https://abdulbasitkayode1.wixsite.com/african-marketplace?page=3",
+    //   technologies: ["Wix"]
+    // },
+    // {
+    //   title: "AzureCloudi",
+    //   description: "An e-commerce platform to connect local vendors with customers, showcasing a wide variety of African products and services in a visually engaging manner.",
+    //   imageUrl: "wix.avif",
+    //   link: "https://abdulbasitkayode1.wixsite.com/african-marketplace?page=3",
+    //   technologies: ["Wix"]
+    // },
+
     // Add more projects here
   ];
 
