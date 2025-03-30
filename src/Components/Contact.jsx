@@ -31,18 +31,42 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Simulate form submission
-    setTimeout(() => {
-      setStatus("Thank you for contacting me! I will get back to you shortly.");
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        company: "",
-        message: "",
+    
+    // Reset status message
+    setStatus(null);
+    
+    try {
+      const response = await fetch("https://formspree.io/f/xzzeayrw", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message,
+          _subject: `New message from ${formData.firstName} ${formData.lastName}`,
+        }),
       });
-    }, 1000);
+
+      if (response.ok) {
+        setStatus("Thank you for contacting me! I will get back to you shortly.");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          company: "",
+          message: "",
+        });
+      } else {
+        const errorData = await response.json();
+        setStatus(`Error: ${errorData.error || "Something went wrong. Please try again later."}`);
+      }
+    } catch (error) {
+      setStatus("Error: Failed to submit form. Please check your connection and try again.");
+    }
   };
 
   const handleCopy = (text, label) => {
@@ -235,11 +259,10 @@ const Contact = () => {
 
             {copied && (
               <div
-              className="mt-6 p-3 bg-white/50 backdrop-blur-md dark:text-white border border-green-800 rounded-lg text-center animate-fadeIn"
-            >
-              {copied} to clipboard!
-            </div>
-            
+                className="mt-6 p-3 bg-white/50 backdrop-blur-md dark:text-white border border-green-800 rounded-lg text-center animate-fadeIn"
+              >
+                {copied} to clipboard!
+              </div>
             )}
           </div>
 
