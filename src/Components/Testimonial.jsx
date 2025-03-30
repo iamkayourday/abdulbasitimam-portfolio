@@ -5,7 +5,7 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      rating: 3,
+      rating: 4,
       text: "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
       image: "/man.webp",
       name: "Kwame Joseph",
