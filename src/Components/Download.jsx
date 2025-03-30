@@ -8,10 +8,10 @@ const DownloadButton = () => {
     <button
       onClick={() => {
         // Trigger the CV download
-        const cvUrl = "/path-to-your-cv.pdf"; 
+        const cvUrl = "/Abdulbasit-imam-CV.pdf"; 
         const link = document.createElement("a");
         link.href = cvUrl;
-        link.download = "Abdulbasit-resume.pdf";
+        link.download = "Abdulbasit-Imam-CV.pdf";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
