@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import ProjectCard from './ProjectCard';  
 
 const Projects = () => {
-  // Array of project data
+  
   const myprojects = [
     {
       title: "Abdulbasit Portfolio",
       description: "Designed and built my personal portfolio website from scratch to showcase my skills, projects, and expertise as a frontend developer.",
-      imageUrl: "abdulbasitimam-desktop.avif",
+      imageUrl: "abdulbasit-portfolio.avif",
       link: "https://abdulbasitimam.vercel.app/",
-      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"],
+      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Vercel"],
       disabled: false
     },
     {
@@ -17,15 +17,15 @@ const Projects = () => {
       description: "A recipe-sharing web application that enables users to discover, save, and manage their favorite recipes, with a focus on seamless user experience and responsive design.",
       imageUrl: "yum-find-desktop.avif",
       link: "https://yum-find.vercel.app/",
-      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"],
+      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Vercel"],
       disabled: false
     },
     {
       title: "Hair by May",
       description: "Redesigned a mobile-first booking website with an intuitive and responsive interface, connected to Acuity Scheduler for effortless appointment scheduling and enhanced user experience.",
       imageUrl: "hairbymay-desktop.avif",
-      link: "https://hairbymay.vercel.app/",
-      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"],
+      link: "https://hairbymay.com",
+      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Vercel"],
       disabled: false
     },
     {
@@ -33,33 +33,9 @@ const Projects = () => {
       description: "Kulinary Kompass is a culinary guide designed to empower young adults, especially those in care, to gain confidence in the kitchen while staying on budget.",
       imageUrl: "Kulinary-Kompass.avif",
       link: "https://kulinarykompass.co.uk/",
-      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"],
+      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Vercel"],
       disabled: false
     },
-    {
-      title: "Maid In Castle",
-      description: "Maid in Castle is a professional cleaning service dedicated to creating healthier, happier homes through top-quality and eco-friendly cleaning solutions.",
-      imageUrl: "Maid-in-castle.avif",
-      link: "https://maidincastle.vercel.app/",
-      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"],
-      disabled: true
-    },
-    // {
-    //   title: "Telemedics",
-    //   description: "Maid in Castle is a professional cleaning service dedicated to creating healthier, happier homes through top-quality and eco-friendly cleaning solutions.",
-    //   imageUrl: "telemedics.avif",
-    //   link: "https://maidincastle.vercel.app/",
-    //   technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"],
-    //   disabled: true
-    // },
-    // {
-    //   title: "Earth-king",
-    //   description: "Maid in Castle is a professional cleaning service dedicated to creating healthier, happier homes through top-quality and eco-friendly cleaning solutions.",
-    //   imageUrl: "earth-king.avif",
-    //   link: "https://maidincastle.vercel.app/",
-    //   technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Hooks", "Vercel"],
-    //   disabled: true
-    // },
     {
       title: "African Market",
       description: "An e-commerce platform to connect local vendors with customers, showcasing a wide variety of African products and services in a visually engaging manner.",
@@ -68,6 +44,64 @@ const Projects = () => {
       technologies: ["Wix"],
       disabled: false
     },
+    {
+      title: "Maid In Castle",
+      description: "Maid in Castle is a professional cleaning service dedicated to creating healthier, happier homes through top-quality and eco-friendly cleaning solutions.",
+      imageUrl: "Maid-in-castle.avif",
+      link: "https://maidincastle.vercel.app/",
+      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Vercel"],
+      disabled: true
+    },
+    {
+      title: "Detty Vip",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      imageUrl: "detty-vip.avif",
+      link: "https://www.dettyvip.com/",
+      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Vercel"],
+      disabled: true
+    },
+    {
+      title: "AzureCloudi",
+      description: "AzureCloudi is a global cloud solutions provider specializing in secure, compliant, and cost-optimized digital transformation.",
+      imageUrl: "azurecloudi.avif",
+      link: "https://www.azurecloudi.com/",
+      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Vercel"],
+      disabled: false
+    },
+    {
+      title: "Telemedics",
+      description: "A pioneering telemedicine platform designed to deliver quality healthcare to Nigeria's 160 million mobile internet users, with special focus on underserved rural communities.",
+      imageUrl: "telemedics.avif",
+      link: "https://telemedics.vercel.app/",
+      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Vercel"],
+      disabled: true
+    },
+    {
+      title: "Earth King",
+      description: "A specialty e-commerce platform connecting global consumers with authentic African agricultural products and beauty essentials, directly sourced from Ghana and neighboring regions.",
+      imageUrl: "/earth-king.avif",
+      link: "https://earth-king.vercel.app/",
+      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Vercel"],
+      disabled: true
+    },
+    {
+      title: "Icourse",
+      description: "An e-learning platform offering courses in tech, design, and business. Designed to empower learners, this project includes",
+      imageUrl: "/icourse.webp",
+      link: "https://icourse-eta.vercel.app/",
+      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Vercel"],
+      disabled: true
+    },
+    {
+      title: "Crimson",
+      description: "A React-based e-commerce platform showcasing premium wines with immersive animations and intuitive navigation. Designed to reflect the luxury and heritage of fine winemaking.",
+      imageUrl: "/crimson.avif",
+      link: "https://maidincastle.vercel.app/",
+      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Vercel"],
+      disabled: true
+    },
+
+    
   ];
 
   const [visibleProjects, setVisibleProjects] = useState(3);

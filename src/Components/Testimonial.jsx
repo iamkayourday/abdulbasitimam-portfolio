@@ -35,6 +35,7 @@ const Testimonials = () => {
       name: "Michael Brown",
       role: "Restaurant Owner",
     },
+   
   ];
 
   return (
@@ -85,7 +86,7 @@ const Testimonials = () => {
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
-                  <p className="font-semibold text-yellow-500 custom-text">
+                  <p className="font-semibold custom-text text-yellow-500 custom-text">
                     {testimonial.name}
                   </p>
                   <p className="text-sm">{testimonial.role}</p>
