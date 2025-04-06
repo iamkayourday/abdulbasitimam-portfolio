@@ -70,7 +70,7 @@ const Projects = () => {
     },
     {
       title: "Telemedics",
-      description: "A pioneering telemedicine platform designed to deliver quality healthcare to Nigeria's 160 million mobile internet users, with special focus on underserved rural communities.",
+      description: "A virtual healthcare platform for scheduling appointments, accessing telemedicine services, and managing health records in Nigeria.",
       imageUrl: "telemedics.avif",
       link: "https://telemedics.vercel.app/",
       technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Vercel"],
