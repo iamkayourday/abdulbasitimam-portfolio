@@ -96,7 +96,7 @@ const Projects = () => {
       title: "Crimson",
       description: "A React-based e-commerce platform showcasing premium wines with immersive animations and intuitive navigation. Designed to reflect the luxury and heritage of fine winemaking.",
       imageUrl: "/crimson.avif",
-      link: "https://maidincastle.vercel.app/",
+      link: "https://crimson-beta.vercel.app/",
       technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Vercel"],
       disabled: false
     },
