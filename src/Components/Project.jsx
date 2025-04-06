@@ -90,7 +90,7 @@ const Projects = () => {
       imageUrl: "/icourse.webp",
       link: "https://icourse-eta.vercel.app/",
       technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Vercel"],
-      disabled: true
+      disabled: false
     },
     {
       title: "Crimson",
@@ -98,7 +98,7 @@ const Projects = () => {
       imageUrl: "/crimson.avif",
       link: "https://maidincastle.vercel.app/",
       technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Vercel"],
-      disabled: true
+      disabled: false
     },
 
     
