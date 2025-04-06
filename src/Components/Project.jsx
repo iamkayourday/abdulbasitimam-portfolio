@@ -86,7 +86,7 @@ const Projects = () => {
     },
     {
       title: "Icourse",
-      description: "An e-learning platform offering courses in tech, design, and business. Designed to empower learners, this project includes",
+      description: "An e-learning platform offering courses in tech, design, and business. Designed to empower learners.",
       imageUrl: "/icourse.webp",
       link: "https://icourse-eta.vercel.app/",
       technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Vercel"],
