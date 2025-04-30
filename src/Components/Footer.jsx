@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaPhone, FaEnvelope } from "react-icons/fa"; // Icons for contact details
+import { FaGithub, FaLinkedin, FaPhone, FaEnvelope, FaWhatsapp } from "react-icons/fa"; // Icons for contact details
 
 const Footer = () => {
   return (
@@ -69,6 +69,15 @@ const Footer = () => {
               className="flex items-center justify-center w-20 h-20 border-2 border-yellow-500 custom-border rounded-full text-gray-600 dark:hover:text-[#1e1e1f] hover:text-white  transition-colors duration-300 hover:animate-pulse"
             >
               <FaPhone className="text-2xl" />
+            </a>
+            {/* Whatsapp*/}
+            <a
+              href="https://wa.me/2349025021272"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-20 h-20 border-2 border-yellow-500 custom-border rounded-full text-gray-600 dark:hover:text-[#1e1e1f] hover:text-white  transition-colors duration-300 hover:animate-pulse"
+            >
+              <FaWhatsapp className="text-2xl" />
             </a>
 
             {/* Email */}
