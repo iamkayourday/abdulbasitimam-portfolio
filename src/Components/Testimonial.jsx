@@ -101,7 +101,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="w-[300px] bg-[#1a1f2b] dark:bg-gray-300 shadow-lg rounded-lg p-10 flex-shrink-0 snap-center"
+              className="w-[300px]  shadow-lg rounded-lg p-10 flex-shrink-0 snap-center"
             >
               {/* Star Rating */}
               <div className="flex space-x-1">
