@@ -63,56 +63,57 @@ const Footer = () => {
         <div className="flex flex-col items-center space-y-4">
           {/* <h4 className="text-xl font-semibold mt-10">Contact Details</h4> */}
           <div className="flex space-x-6">
-            {/* Phone */}
-            <a
-              href="tel:+2349025021272"
-              className="flex items-center justify-center w-20 h-20 border-2 border-yellow-500 custom-border rounded-full text-gray-600 dark:hover:text-[#1e1e1f] hover:text-white  transition-colors duration-300 hover:animate-pulse"
-            >
-              <FaPhone className="text-2xl" />
-            </a>
-            {/* Whatsapp*/}
-            <a
-              href="https://wa.me/2349025021272"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center w-20 h-20 border-2 border-yellow-500 custom-border rounded-full text-gray-600 dark:hover:text-[#1e1e1f] hover:text-white  transition-colors duration-300 hover:animate-pulse"
-            >
-              <FaWhatsapp className="text-2xl" />
-            </a>
+  {/* Phone */}
+  <a
+    href="tel:+2349025021272"
+    className="flex items-center justify-center w-12 h-12 border-2 border-yellow-500 custom-border rounded-full text-gray-600 hover:text-white transition-colors duration-300 hover:animate-pulse"
+  >
+    <FaPhone className="text-2xl text-green-600" /> {/* Official phone color */}
+  </a>
+  
+  {/* WhatsApp */}
+  <a
+    href="https://wa.me/2349025021272"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center justify-center w-12 h-12 border-2 border-yellow-500 custom-border rounded-full text-gray-600 hover:text-white transition-colors duration-300 hover:animate-pulse"
+  >
+    <FaWhatsapp className="text-2xl text-green-500" /> {/* WhatsApp green */}
+  </a>
 
-            {/* Email */}
-            <a
-              href="mailto:abdulbasitkayode@gmail.com"
-              className="flex items-center justify-center w-20 h-20 border-2 border-yellow-500 custom-border rounded-full text-gray-600 dark:hover:text-[#1e1e1f] hover:text-white  transition-colors duration-300 hover:animate-pulse"
-            >
-              <FaEnvelope className="text-2xl" />
-            </a>
+  {/* Email */}
+  <a
+    href="mailto:abdulbasitkayode@gmail.com"
+    className="flex items-center justify-center w-12 h-12 border-2 border-yellow-500 custom-border rounded-full text-gray-600 hover:text-white transition-colors duration-300 hover:animate-pulse"
+  >
+    <FaEnvelope className="text-2xl text-red-600" /> {/* Email red */}
+  </a>
 
-            {/* GitHub */}
-            <a
-              href="https://github.com/iamkayourday"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center w-20 h-20 border-2 border-yellow-500 custom-border rounded-full text-gray-600 dark:hover:text-[#1e1e1f] hover:text-white  transition-colors duration-300 hover:animate-pulse"
-            >
-              <FaGithub className="text-2xl" />
-            </a>
+  {/* GitHub */}
+  <a
+    href="https://github.com/iamkayourday"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center justify-center w-12 h-12 border-2 border-yellow-500 custom-border rounded-full text-gray-600 hover:text-white transition-colors duration-300 hover:animate-pulse"
+  >
+    <FaGithub className="text-2xl text-gray-800" /> {/* GitHub black/gray */}
+  </a>
 
-            {/* LinkedIn */}
-            <a
-              href="www.linkedin.com/in/abdulbasitimam"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center w-20 h-20 border-2 border-yellow-500 custom-border rounded-full text-gray-600 dark:hover:text-[#1e1e1f] hover:text-white  transition-colors duration-300 hover:animate-pulse"
-            >
-              <FaLinkedin className="text-2xl" />
-            </a>
-          </div>
+  {/* LinkedIn */}
+  <a
+    href="https://www.linkedin.com/in/abdulbasitimam"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center justify-center w-12 h-12 border-2 border-yellow-500 custom-border rounded-full text-gray-600 hover:text-white transition-colors duration-300 hover:animate-pulse"
+  >
+    <FaLinkedin className="text-2xl text-blue-600" /> {/* LinkedIn blue */}
+  </a>
+</div>
         </div>
 
         {/* Copyright */}
         <div className="mt-8 text-center text-sm  border-t dark:border-gray-900 pt-4">
-          <p>© 2025 Abdulbasit. All Rights Reserved.</p>
+          <p>©-2025 Abdulbasit. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
