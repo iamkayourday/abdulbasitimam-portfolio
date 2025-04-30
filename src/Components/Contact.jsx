@@ -91,7 +91,7 @@ const Contact = () => {
         {/* Left Side - Contact Form */}
         <div className="relative group">
           <div className="absolute -inset-1 custom bg-yellow-500 rounded-xl blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
-          <div className="relative bg-[#1e1e1f] dark:bg-gray-50 p-8 rounded-xl border border-yellow-500 custom-border shadow-2xl">
+          <div className="relative bg-[#1e1e1f] dark:bg-gray-50 p-8 rounded-xl border border-gray-300 custom-border shadow-2xl">
             <h2 className="md:text-2xl text-xl font-bold text-yellow-400 mb-8 flex items-center gap-3">
               <div className="p-2 bg-gray-200/10 rounded-lg">
                 <FiSend className="text-yellow-400 custom-text animate-pulse" />
@@ -120,7 +120,7 @@ const Contact = () => {
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="w-full pl-3 pr-4 py-3 bg-[#1a1f2b] dark:bg-gray-300 custom-border rounded-lg border border-yellow-500  focus:border-gray-500 focus:outline-none peer"
+                    className="w-full pl-3 pr-4 py-3 bg-[#232527] dark:bg-gray-300  rounded-lg border border-gray-300  focus:border-gray-500 focus:outline-none peer"
                     placeholder="Firstname*"
                     required
                   />
@@ -132,7 +132,7 @@ const Contact = () => {
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleChange}
-                    className="w-full pl-3 pr-4 py-3 bg-[#1a1f2b] dark:bg-gray-300 custom-border rounded-lg border border-yellow-500 focus:border-gray-500 focus:outline-none peer"
+                    className="w-full pl-3 pr-4 py-3 bg-[#232527] dark:bg-gray-300  rounded-lg border border-gray-300 focus:border-gray-500 focus:outline-none peer"
                     placeholder="Lastname*"
                     required
                   />
@@ -147,7 +147,7 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full pl-3 pr-4 py-3 bg-[#1a1f2b] dark:bg-gray-300 custom-border rounded-lg border border-yellow-500 focus:border-gray-500 focus:outline-none peer"
+                    className="w-full pl-3 pr-4 py-3 bg-[#232527] dark:bg-gray-300  rounded-lg border border-gray-300 focus:border-gray-500 focus:outline-none peer"
                     placeholder="Email*"
                     required
                   />
@@ -159,7 +159,7 @@ const Contact = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full pl-3 pr-4 py-3 bg-[#1a1f2b] dark:bg-gray-300 custom-border rounded-lg border border-yellow-500 focus:border-gray-500 focus:outline-none peer"
+                    className="w-full pl-3 pr-4 py-3 bg-[#232527] dark:bg-gray-300  rounded-lg border border-gray-300 focus:border-gray-500 focus:outline-none peer"
                     placeholder="Company (Optional)"
                   />
                 </div>
@@ -171,7 +171,7 @@ const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-[#1a1f2b] dark:bg-gray-300 custom-border rounded-lg border border-yellow-500 focus:border-gray-500 focus:outline-none peer min-h-[150px]"
+                  className="w-full px-4 py-3 bg-[#232527] dark:bg-gray-300  rounded-lg border border-gray-300 focus:border-gray-500 focus:outline-none peer min-h-[150px]"
                   placeholder="Message*"
                   required
                 />
@@ -180,7 +180,7 @@ const Contact = () => {
               <div className="pt-2 flex justify-start">
                 <button
                   type="submit"
-                  className="custom flex items-center gap-3 bg-yellow-500  custom-border font-medium py-3 px-6 rounded-lg transition-all duration-300 shadow-lg  active:scale-95"
+                  className="dark:hover:text-white custom flex items-center gap-3 bg-yellow-500   font-medium py-3 px-6 rounded-lg transition-all duration-300 shadow-lg  active:scale-95 hover:animate-bounce"
                 >
                   <FiSend className="text-lg" />
                   Send Message
@@ -231,7 +231,7 @@ const Contact = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-between bg-[#1a1f2b] dark:bg-gray-300 dark:hover:bg-gray-200 hover:bg-[#1f2430] p-4 sm:p-5 rounded-lg border border-gray-600 transition duration-300 group"
+                  className="flex items-center justify-between bg-[#232527] dark:bg-gray-300 dark:hover:bg-gray-200 hover:bg-[#1f2430] p-4 sm:p-5 rounded-lg border border-gray-600 transition duration-300 group"
                 >
                   <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
                     <div className="p-2 bg-gray-700/10 rounded-lg flex-shrink-0 animate-pulse">
@@ -266,7 +266,7 @@ const Contact = () => {
             )}
           </div>
 
-          <div className="bg-[#1e1e1f] dark:bg-gray-50  p-6 rounded-xl border border-yellow-500 custom-border shadow-2xl">
+          <div className="bg-[#1e1e1f] dark:bg-gray-50  p-6 rounded-xl border border-gray-300 custom-border shadow-2xl">
             <h3 className="text-xl font-semibold text-yellow-400 mb-3 flex items-center gap-2">
               <FiPhone className="text-yellow-400 custom-text" />
               Availability
