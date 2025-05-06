@@ -45,6 +45,14 @@ const Projects = () => {
       disabled: false
     },
     {
+      title: "Bridge",
+      description: "A React-based website that connects Landlordsa and Tenants.",
+      imageUrl: "/Bridge.avif",
+      link: "https://bridge-six-gamma.vercel.app/",
+      technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Vercel"],
+      disabled: false
+    },
+    {
       title: "Maid In Castle",
       description: "Maid in Castle is a professional cleaning service dedicated to creating healthier, happier homes through top-quality and eco-friendly cleaning solutions.",
       imageUrl: "Maid-in-castle.avif",
