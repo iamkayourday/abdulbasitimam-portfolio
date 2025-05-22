@@ -24,7 +24,7 @@ const Projects = () => {
       title: "Hair by May",
       description: "Redesigned a mobile-first booking website with an intuitive and responsive interface, connected to Acuity Scheduler for effortless appointment scheduling and enhanced user experience.",
       imageUrl: "hairbymay-desktop.avif",
-      link: "https://hairbymay.com",
+      link: "https://hairbymay.co.uk",
       technologies: ["Html", "Css", "JavaScript", "React", "Tailwind-Css", "Vercel"],
       disabled: false
     },
