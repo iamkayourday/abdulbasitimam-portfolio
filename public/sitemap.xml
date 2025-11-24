@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Main Homepage -->
+  <url>
+    <loc>https://www.abdulbasitimam.me/</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" href="https://www.abdulbasitimam.me/#about" hreflang="en" />
+    <xhtml:link rel="alternate" href="https://www.abdulbasitimam.me/#skills" hreflang="en" />
+    <xhtml:link rel="alternate" href="https://www.abdulbasitimam.me/#timeline" hreflang="en" />
+    <xhtml:link rel="alternate" href="https://www.abdulbasitimam.me/#services" hreflang="en" />
+    <xhtml:link rel="alternate" href="https://www.abdulbasitimam.me/#projects" hreflang="en" />
+    <xhtml:link rel="alternate" href="https://www.abdulbasitimam.me/#testimonial" hreflang="en" />
+    <xhtml:link rel="alternate" href="https://www.abdulbasitimam.me/#contact" hreflang="en" />
+  </url>
+
+  <!-- Individual Section URLs for better SEO -->
+  <url>
+    <loc>https://www.abdulbasitimam.me/#about</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.abdulbasitimam.me/#skills</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.abdulbasitimam.me/#timeline</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.abdulbasitimam.me/#services</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.abdulbasitimam.me/#projects</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.abdulbasitimam.me/#testimonial</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.abdulbasitimam.me/#contact</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

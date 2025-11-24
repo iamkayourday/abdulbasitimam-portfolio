@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Allow: /#about
+Allow: /#skills
+Allow: /#timeline
+Allow: /#services
+Allow: /#projects
+Allow: /#testimonial
+Allow: /#contact
+
+Sitemap: https://www.abdulbasitimam.me/sitemap.xml
