@@ -8,6 +8,7 @@ import {
   FiBriefcase,
   FiCopy,
 } from "react-icons/fi";
+import { trackEvent } from '../utils/analytics';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -31,6 +32,9 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+     // Track form submission
+    trackEvent('submit_contact_form', 'lead', 'Contact Form Submitted');
     
     // Reset status message
     setStatus(null);

@@ -1,7 +1,15 @@
 import { useState } from "react";
 import { FaDownload } from "react-icons/fa";
+import { trackCVDownload } from '../utils/analytics';
 
 const DownloadButton = () => {
+  const handleDownload = () => {
+    // Track the download
+    trackCVDownload();
+    
+    // Your existing download logic
+    window.open('/abdulbasit-cv.pdf', '_blank');
+  };
   const [isHovered, setIsHovered] = useState(false);
 
   return (

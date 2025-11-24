@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaPalette } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import { trackThemeChange } from '../utils/analytics';
 
 const ThemeSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,6 +30,7 @@ const ThemeSwitcher = () => {
   }, []);
 
   const toggleTheme = (selectedTheme) => {
+    trackThemeChange(selectedTheme);
     const darkMode = document.documentElement.classList.contains('dark');
     const newClasses = [selectedTheme];
     if (darkMode) newClasses.push('dark');

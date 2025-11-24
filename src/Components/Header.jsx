@@ -3,6 +3,7 @@ import { Link } from "react-scroll";
 import { FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import Mode from "./Mode";
+import { trackPageView } from '../utils/analytics';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +20,27 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // In your Header component, add to the intersection observer
+useEffect(() => {
+  const sections = document.querySelectorAll('section[id]');
+  
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+          // Track section view
+          trackPageView(entry.target.id);
+        }
+      });
+    },
+    { threshold: 0.5, rootMargin: "-20% 0px -70% 0px" }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+  return () => sections.forEach((section) => observer.unobserve(section));
+}, []);
 
   // Active section observer
   useEffect(() => {

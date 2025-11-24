@@ -1,8 +1,17 @@
 import React from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { trackProjectClick } from '../utils/analytics';
 
 const ProjectCard = ({ projectData }) => {
+  
+   const handleProjectClick = () => {
+    trackProjectClick(project.title);
+    
+    if (!project.disabled) {
+      window.open(project.link, '_blank');
+    }
+  };
   const animationProps = useSpring({
     opacity: 1,
     transform: "scale(1)",
@@ -11,9 +20,10 @@ const ProjectCard = ({ projectData }) => {
   });
 
   return (
-    <animated.div
+    <animated.div 
       className="max-w-7xl rounded-lg shadow-lg overflow-hidden transform transition-all duration-500"
       style={animationProps}
+      onClick={handleProjectClick}
     >
       <div className="relative">
         <div
