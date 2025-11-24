@@ -15,16 +15,16 @@ const Projects = () => {
       featured: true,
       disabled: false
     },
-    {
-      title: "Abdulbasit Portfolio",
-      description: "Designed and built my personal portfolio website from scratch to showcase my skills, projects, and expertise as a full-stack developer.",
-      imageUrl: "abdulbasit-portfolio.avif",
-      link: "https://abdulbasitimam.vercel.app/",
-      technologies: ["React", "JavaScript", "Tailwind CSS", "Framer Motion", "Vercel"],
-      category: "frontend",
-      featured: true,
-      disabled: false
-    },
+    // {
+    //   title: "Abdulbasit Portfolio",
+    //   description: "Designed and built my personal portfolio website from scratch to showcase my skills, projects, and expertise as a full-stack developer.",
+    //   imageUrl: "abdulbasit-portfolio.avif",
+    //   link: "https://abdulbasitimam.vercel.app/",
+    //   technologies: ["React", "JavaScript", "Tailwind CSS", "Framer Motion", "Vercel"],
+    //   category: "frontend",
+    //   featured: true,
+    //   disabled: false
+    // },
     {
       title: "YumFind",
       description: "A recipe-sharing web application that enables users to discover, save, and manage their favorite recipes with seamless user experience and responsive design.",
