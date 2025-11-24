@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-screen-lg mx-auto px-6 flex flex-col items-center space-y-8">
         {/* Logo */}
         <div className="text-center">
-          <h3 className="text-3xl font-bold custom-text text-yellow-500">Abdulbasit</h3>
+          <h3 className="text-3xl font-bold custom-text text-yellow-500 logo">Abdulbasit</h3>
         </div>
 
         {/* My Links */}
