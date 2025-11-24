@@ -50,7 +50,7 @@ const About = () => {
           <div className="w-full lg:w-1/2 flex flex-col items-center gap-8">
             <motion.div className="w-full flex justify-center" variants={itemVariants}>
               <img
-                src="abdulbasit.jpg"
+                src="abdulbasit.png"
                 alt="Abdulbasit Kayode Imam"
                 className="w-full h-auto rounded-lg object-cover"
                 loading="lazy"
