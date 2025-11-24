@@ -201,8 +201,7 @@ const Contact = () => {
             </h2>
 
             <p className=" mb-8 text-lg">
-              Feel free to reach out through any of these channels. I typically
-              respond within 24 hours.
+              Prefer direct communication? Reach out through any of these channels. I'm always excited to discuss new opportunities and creative projects.
             </p>
 
             <div className="space-y-4 sm:space-y-5">
