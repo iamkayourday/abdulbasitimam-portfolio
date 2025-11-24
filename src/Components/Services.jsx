@@ -6,39 +6,43 @@ import {
   FaCodeBranch,
   FaGlobe,
   FaRocket,
+  FaServer,
+  FaDatabase,
+  FaPython,
+  FaShieldAlt,
 } from "react-icons/fa";
 
 const Services = () => {
   const services = [
     {
-      icon: <FaCode className="text-4xl text-yellow-500 mb-4 custom-text" />,
-      title: "Responsive Web Design",
-      description: "Create websites that look great on all devices, from desktops to mobiles.",
+      icon: <FaCode className="text-4xl" />,
+      title: "Frontend Development",
+      description: "Build responsive, interactive user interfaces with React, JavaScript, and modern CSS frameworks.",
     },
     {
-      icon: <FaMobileAlt className="text-4xl text-yellow-500 mb-4 custom-text" />,
-      title: "Interactive Web Apps",
-      description: "Build dynamic, user-friendly web applications with modern frameworks.",
+      icon: <FaServer className="text-4xl" />,
+      title: "Backend Development",
+      description: "Develop robust server-side applications using Python, Django, and REST API architecture.",
     },
     {
-      icon: <FaPlug className="text-4xl text-yellow-500 mb-4 custom-text" />,
+      icon: <FaMobileAlt className="text-4xl" />,
+      title: "Full-Stack Applications",
+      description: "Create complete web applications from frontend to backend with seamless integration.",
+    },
+    {
+      icon: <FaDatabase className="text-4xl" />,
+      title: "Database Design",
+      description: "Design and implement efficient database structures and data models for web applications.",
+    },
+    {
+      icon: <FaPlug className="text-4xl" />,
       title: "API Integration",
-      description: "Connect web applications with external services and APIs for enhanced functionality.",
+      description: "Connect applications with external services and third-party APIs for enhanced functionality.",
     },
     {
-      icon: <FaCodeBranch className="text-4xl text-yellow-500 mb-4 custom-text" />,
-      title: "Version Control & Collaboration",
-      description: "Manage codebases with tools like Git and GitHub, ensuring seamless team collaboration.",
-    },
-    {
-      icon: <FaGlobe className="text-4xl text-yellow-500 mb-4 custom-text" />,
-      title: "Cross-Browser Compatibility",
-      description: "Ensure websites look and perform consistently across all major browsers.",
-    },
-    {
-      icon: <FaRocket className="text-4xl text-yellow-500 mb-4 custom-text" />,
-      title: "Web Optimization",
-      description: "Ensure websites load quickly, are SEO-friendly, and perform well across devices.",
+      icon: <FaShieldAlt className="text-4xl" />,
+      title: "Security & Performance",
+      description: "Implement security best practices and optimize applications for speed and reliability.",
     },
   ];
 
@@ -50,65 +54,80 @@ const Services = () => {
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
 
-    // Function to enable continuous scrolling
     const startScrolling = () => {
       if (scrollContainer) {
-        scrollContainer.scrollLeft += 1; // Adjust speed as needed
+        scrollContainer.scrollLeft += 1;
         if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
-          scrollContainer.scrollLeft = 0; // Reset to start for seamless loop
+          scrollContainer.scrollLeft = 0;
         }
       }
     };
 
-    // Start the continuous scroll animation
-    const scrollInterval = setInterval(startScrolling, 20); // Adjust speed as needed
-
-    // Clear the interval when the component unmounts
+    const scrollInterval = setInterval(startScrolling, 20);
     return () => clearInterval(scrollInterval);
   }, []);
 
   return (
-    <section id="services" className="py-20 mt-20">
-      <div className="max-w-7xl mx-auto px-4">
-        <header className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-yellow-500">Services</h2>
-          <p className="mt-4 text-lg ">
-            What I bring to the table as a frontend developer.
+    <section id="services" className="py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header Section */}
+        <div className="text-center mb-12 md:mb-20">
+          <h2 className="text-3xl md:text-5xl font-bold custom-text text-yellow-400 mb-4 md:mb-6">
+            My Services
+          </h2>
+          <p className="text-base md:text-xl max-w-3xl mx-auto leading-relaxed">
+            From frontend interfaces to complete full-stack solutions, I deliver comprehensive web development services.
           </p>
-        </header>
+        </div>
 
-        {/* Horizontal Scroll Container */}
-        <div
-          ref={scrollContainerRef}
-          className="md:hidden overflow-x-auto no-scrollbar"
-        >
-          <div className="flex gap-8 pb-4">
-            {duplicatedServices.map((service, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 min-w-[280px]"
-              >
-                {service.icon}
-                <h3 className="md:text-xl text-base font-semibold mb-2 text-nowrap">{service.title}</h3>
-                <p className="">{service.description}</p>
-              </div>
-            ))}
+        {/* Mobile Horizontal Scroll */}
+        <div className="md:hidden">
+          <div className="text-center mb-6">
+            <p className="text-sm">Swipe to explore →</p>
+          </div>
+          <div
+            ref={scrollContainerRef}
+            className="overflow-x-auto no-scrollbar py-4"
+          >
+            <div className="flex gap-4 min-w-max px-4">
+              {duplicatedServices.map((service, index) => (
+                <div
+                  key={index}
+                  className="rounded-xl border-2 custom-border border-yellow-400 p-5 w-[85vw] transform transition-all duration-300 hover:scale-105 flex flex-col"
+                >
+                  <div className="custom-text text-yellow-400 mb-3">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-lg font-bold mb-2 custom-text text-yellow-400">{service.title}</h3>
+                  <p className="text-sm leading-relaxed flex-grow">{service.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Grid Layout for Larger Screens */}
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Desktop Grid Layout */}
+        <div className="hidden md:grid grid-cols-1 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="p-6 rounded-lg shadow-xl hover:shadow-xl transition-shadow duration-300"
+              className="rounded-xl border-2 custom-border p-6 transform transition-all duration-300 hover:scale-105 group flex flex-col h-full"
             >
-              {service.icon}
-              <h3 className="md:text-xl text-lg font-semibold mb-2 text-nowrap">{service.title}</h3>
-              <p className="">{service.description}</p>
+              <div className="custom-text text-yellow-400 mb-4 group-hover:scale-110 transition-transform duration-300">
+                {service.icon}
+              </div>
+              <h3 className="text-xl font-bold mb-3 transition-colors duration-300 custom-text text-yellow-400">
+                {service.title}
+              </h3>
+              <p className="leading-relaxed flex-grow">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>
+
+        {/* Bottom Spacing */}
+        <div className="mt-12 md:mt-16"></div>
       </div>
 
       {/* Hide Scrollbar */}
@@ -118,8 +137,8 @@ const Services = () => {
             display: none;
           }
           .no-scrollbar {
-            -ms-overflow-style: none; /* IE and Edge */
-            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
           }
         `}
       </style>
