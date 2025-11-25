@@ -53,7 +53,8 @@ const About = () => {
                 src="abdulbasit.png"
                 alt="Abdulbasit Kayode Imam"
                 className="w-full h-auto rounded-lg object-cover"
-                loading="lazy"
+                loading="eager"
+                fetchpriority="high"
                 width={500}
                 height={500}
               />

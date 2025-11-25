@@ -29,7 +29,7 @@ const Mode = () => {
   };
 
   return (
-    <button onClick={toggleMode} className="p-2">
+    <button aria-label="Toggle dark mode"  onClick={toggleMode}  className="p-2">
       {isDarkMode ? <FaMoon className="text-[#1e1e1f]" /> :  <FaSun className="text-white" />}
     </button>
   );

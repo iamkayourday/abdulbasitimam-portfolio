@@ -173,7 +173,7 @@ useEffect(() => {
                   offset={-70}
                   className={`relative cursor-pointer transition-all duration-300 py-2 px-4 text-sm uppercase tracking-wider rounded-lg ${
                     activeSection === item.to
-                      ? "custom-text text-yellow-400 bg-white/10"
+                      ? "custom-text text-yellow-400 bg-white/10 border custom-border border-yellow-400/30"
                       : "text-white/80 hover:text-white hover:bg-white/5"
                   }`}
                   activeClass="custom-text text-yellow-400"
